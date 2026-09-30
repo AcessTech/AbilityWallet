@@ -6,7 +6,7 @@ import { useSession } from '../../../src/lib/session';
 import { MEMBER_PILL } from '../../../src/lib/pills';
 
 /**
- * Prototype screens `alex/card_lost` and `alex/card_lost_done`.
+ * Report the card lost or stolen.
  * A5 always sends and cannot be turned off: a missing card is time-critical.
  */
 export default function ReportLost() {

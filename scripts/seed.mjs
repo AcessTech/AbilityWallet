@@ -1,11 +1,11 @@
 /**
  * Loads two fake test accounts so the screens can be walked through with money
- * on them. Appendix A §4.4: this runs only when Eric asks for it.
+ * on them. It runs only when invoked by hand; nothing calls it automatically.
  *
  *   SUPABASE_DB_PASSWORD=… node scripts/seed.mjs          # load
  *   SUPABASE_DB_PASSWORD=… node scripts/seed.mjs --wipe   # remove them again
  *
- * The numbers come from the prototype, so the phone should look like the
+ * The numbers come from the design, so the phone should look like the
  * drawings: checking $412.55, ABLE $6,240, emergency $150, EBT $187.42, and
  * budget rings reading $96 / $38 / $8 left.
  *
@@ -19,7 +19,7 @@ import { createClient } from '@supabase/supabase-js';
 const MEMBER = { email: 'alex@example.com', first: 'Alex', last: 'Rivera', dob: '1992-03-14' };
 const NAVIGATOR = { email: 'maria@example.com', first: 'Maria', last: 'Santos' };
 const PASSWORD = 'abilitywallet';
-const LEVEL = 4; // Firm limits — the level the prototype draws.
+const LEVEL = 4; // Firm limits — the level the design draws.
 
 const env = Object.fromEntries(
   fs.readFileSync(new URL('../.env', import.meta.url), 'utf8')
@@ -36,7 +36,7 @@ const db = new pg.Client({
 const client = () => createClient(URL_, KEY, { auth: { persistSession: false } });
 
 /**
- * Appendix A §4.4: transfers must go before linked_banks, or the
+ * Transfers must go before linked_banks, or the
  * ON DELETE SET NULL on transfers.from_linked_bank trips the
  * transfer_has_one_source constraint and aborts the wipe.
  */
@@ -62,7 +62,7 @@ async function signUp(person, role) {
   return { client: c, id: data.user.id };
 }
 
-/** A date this month, so "this month" numbers land where the prototype has them. */
+/** A date this month, so "this month" numbers land where the design has them. */
 function thisMonth(day, hour = 12) {
   const d = new Date();
   d.setDate(day);
@@ -145,13 +145,13 @@ async function main() {
             ($1,'games','Games',50,'month','stop',4)`, [mem.id]);
 
   // GameStop belongs to the custom "Games" label, not the Fun line. Custom
-  // labels map back to the spine underneath (prd.md §5.6).
+  // labels map back to the spine underneath.
   await db.query(
     `insert into merchant_rules (member_id, merchant_key, merchant_label, category, ask, source)
      values ($1,'gamestop','GameStop','games',false,'navigator_set')`, [mem.id]);
 
-  // Rides get asked about once per merchant and then remembered
-  // (Appendix A §2.4). These two have been answered before.
+  // Rides get asked about once per merchant and then remembered.
+  // These two have been answered before.
   await db.query(
     `insert into merchant_rules (member_id, merchant_key, merchant_label, category, qde, ask, source)
      values ($1,'rideshare-plus','RideShare Plus','around','Transportation',false,'member_answer'),
@@ -160,7 +160,7 @@ async function main() {
 
   /* ---- three months of history ------------------------------------------- */
   // Only the current month feeds the budget rings, so this cannot disturb the
-  // numbers the prototype draws.
+  // numbers the design draws.
   const HISTORY = [
     ['Social Security', 994.0, 'deposit', 1],
     ['Acme Foods', 380.0, 'deposit', 15],
@@ -206,7 +206,7 @@ async function main() {
     await db.query(`select simulate_deposit($1,$2,$3,$4)`, [mem.id, source, amount, at]);
   }
 
-  // Spends chosen so the rings read exactly what the prototype draws:
+  // Spends chosen so the rings read exactly what the design draws:
   // Groceries $54 of $150, Fun $82 of $120, Getting around $52 of $60,
   // Games $34.99 of $50.
   const purchases = [
@@ -246,7 +246,7 @@ async function main() {
     [mem.id, ableAccount, thisMonth(3, 15)]);
 
   // One ABLE debit that could not be categorised: this raises the mandatory
-  // ABLE question (Appendix A §2.1).
+  // ABLE question.
   await db.query(
     `select post_transaction($1,$2,'Corner Hardware',null,-34.20,null,'card',$3)`,
     [mem.id, ableAccount, thisMonth(6, 16)]);
@@ -261,7 +261,7 @@ async function main() {
     `select simulate_purchase($1,'GameStop','5816',72.50) as r`, [mem.id]);
   console.log(`GameStop $72.50 → ${declined.rows[0].r.status}: "${declined.rows[0].r.declined_reason}"`);
 
-  /* ---- balances, set to what the prototype draws ------------------------- */
+  /* ---- balances, set to what the design draws ---------------------------- */
   await db.query(
     `update accounts set balance = case kind
        when 'checking'  then 412.55

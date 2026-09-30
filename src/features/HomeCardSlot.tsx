@@ -6,7 +6,7 @@ import { initials, money, tileColor } from '../lib/format';
 import { MemberHome, useAnswerCard, useDismissNotice } from '../data/hooks';
 
 /**
- * The single card slot at the top of the Member's Home (Appendix A).
+ * The single card slot at the top of the Member's Home.
  *
  * At most ONE card asks for an answer at a time. Buttons are always static —
  * Yes / No, or Yes / Not now on the sentinel card. Context lives in the card
@@ -89,7 +89,7 @@ function routeAfterAnswer(
   if (!yes) return;
 
   // No double-confirm after a decision-card Yes: tapping Yes executed it, so
-  // the success screen is the confirmation (Appendix A §6.3).
+  // the success screen is the confirmation.
   if (card.cls === 'QDE_OFFER' && result.reimbursed) {
     router.push({
       pathname: '/(member)/done/qde',

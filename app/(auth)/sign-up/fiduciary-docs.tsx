@@ -5,10 +5,8 @@ import { Btn, Plain } from '../../../src/components/ui';
 import { useSignup } from '../../../src/lib/signup';
 
 /**
- * ob-10b Fiduciary requires SSA documents.
- * NOT IN THE PROTOTYPE at this point in the flow (screens.md marks it SPEC);
- * the paperwork screens themselves are drawn as n_l5_start..n_l5_approved and
- * are reachable later from Plan. Needs Eric's review.
+ * Fiduciary requires SSA documents. The paperwork screens themselves are
+ * reachable later from Plan.
  */
 export default function FiduciaryDocs() {
   const router = useRouter();

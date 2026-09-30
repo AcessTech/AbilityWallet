@@ -5,7 +5,7 @@
 -- visibility. Nobody else reads anything.
 --
 -- A row-level policy alone is not enough: the role also needs a table-level
--- GRANT (build_status.md §6 — this cost an hour in July). The grants are at
+-- GRANT, which is easy to miss. The grants are at
 -- the bottom of this file.
 
 -- ------------------------------------------------------------- helpers ----
@@ -23,8 +23,8 @@ language sql stable security definer set search_path = public as $$
   );
 $$;
 
--- Level 1 (Independent) has NO account visibility — messages only
--- (Appendix B delivery matrix). Anything about money needs level >= 2.
+-- Level 1 (Independent) has NO account visibility — messages only.
+-- Anything about money needs level >= 2.
 create or replace function auth_sees_money_of(p_member uuid)
 returns boolean
 language sql stable security definer set search_path = public as $$
@@ -152,8 +152,8 @@ begin
   end loop;
 end $$;
 
--- member_facts exist only to gate questions and are shown to nobody as a list
--- (Appendix A §3.5). The member may read his own; navigators may not.
+-- member_facts exist only to gate questions and are shown to nobody as a list.
+-- The member may read his own; navigators may not.
 create policy member_facts_self on member_facts for select to authenticated
   using (member_id = auth.uid());
 
@@ -168,7 +168,7 @@ create policy consents_update on consents for update to authenticated
   using (member_id = auth.uid() or proposed_by = auth.uid())
   with check (member_id = auth.uid() or proposed_by = auth.uid());
 
--- The Member never sees the Navigator's alert settings (Appendix B rule 2).
+-- The Member never sees the Navigator's alert settings.
 create policy alerts_own on alerts for select to authenticated
   using (navigator_id = auth.uid());
 create policy alerts_update on alerts for update to authenticated

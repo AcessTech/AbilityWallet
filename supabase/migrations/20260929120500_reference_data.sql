@@ -1,7 +1,7 @@
 -- Ability Wallet — reference data. NOT test accounts: this is the taxonomy and
 -- routing tables the engine needs on an empty database.
 
--- The 14-category spine (prd.md §5.6, settled Aug 7). The member-facing word is
+-- The 14-category spine. The member-facing word is
 -- what the Member sees; the QDE name is federal accounting and is never shown
 -- to him. Plus Funeral & burial, a QDE handled at transaction level only and
 -- never a budget row.
@@ -23,8 +23,8 @@ insert into spine_categories (id, member_word, navigator_word, qde, sub_labels, 
   ('savings',     'Savings & goals',   'Savings & goals',         null,                                       '{}',                                            true, 14),
   ('funeral',     'Funeral & burial',  'Funeral & burial',        'Funeral & burial',                         '{}',                                            false, 15);
 
--- MCC -> candidate QDE (Appendix A §2.4) and the block groups behind the
--- category toggles (Appendix A §6.5).
+-- MCC -> candidate QDE and the block groups behind the
+-- category toggles.
 insert into mcc_categories (mcc, description, spine_id, candidate_qde, auto_assign, block_group) values
   ('5200','Home supply warehouse',        'home',      'Housing',        false, null),
   ('5211','Lumber & building materials',  'home',      'Housing',        false, null),
@@ -98,7 +98,7 @@ insert into known_scams (merchant_key, label) values
   ('tech-support-refund',   'Tech Support Refund'),
   ('crypto-quick-cash',     'Crypto Quick Cash');
 
--- Alert routing (Appendix B). One group per code.
+-- Alert routing. One group per code.
 insert into alert_group_map (code, grp, min_level, push_default, can_turn_off, wording) values
   ('A1','money',      2, false, true,  '{source} deposit: {amount}'),
   ('A2','money',      2, true,  true,  '{member}''s checking is below {threshold}'),

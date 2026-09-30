@@ -1,5 +1,5 @@
 -- Reporting the card lost or stolen. A5 always sends and cannot be turned off:
--- a missing card is time-critical (Appendix B).
+-- a missing card is time-critical.
 
 create or replace function report_card_lost(p_member uuid)
 returns jsonb

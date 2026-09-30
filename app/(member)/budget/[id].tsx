@@ -13,12 +13,11 @@ import { gaugeColor } from '../../../src/theme/tokens';
 import { MEMBER_PILL } from '../../../src/lib/pills';
 
 /**
- * One budget line, his side. Prototype screens `alex/cat_groceries`,
- * `cat_fun`, `cat_around`.
+ * One budget line, his side (for example Groceries, Fun or Getting around).
  *
  * Rings only: no mode tags, ever. Restriction invisibility means a stop line
  * looks exactly like a guide line here — a stop surfaces only at decline time
- * and at consent time (Appendix A §0.5).
+ * and at consent time.
  */
 export default function MemberBudgetDetail() {
   const router = useRouter();

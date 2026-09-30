@@ -1,8 +1,6 @@
 /**
- * Design tokens, taken from the shared <style> block in
- * docs/ability_wallet_prototype_v5.html. Every screen in the prototype uses
+ * Design tokens, taken from the design's shared stylesheet. Every screen uses
  * the same stylesheet, so these values are the whole visual vocabulary.
- * Brief §6.
  */
 
 export const color = {
@@ -15,7 +13,7 @@ export const color = {
   orange: '#D97706',
   red: '#B3261E',
 
-  // Surfaces, from the prototype's .phone / .screen / .card rules.
+  // Surfaces, from the design's .phone / .screen / .card rules.
   screenBg: '#f4f6f9',
   cardBg: '#ffffff',
   statusBg: '#ffffff',
@@ -32,7 +30,7 @@ export const color = {
 } as const;
 
 /**
- * Nunito Sans weights in use. The prototype asks for 1000; Google ships static
+ * Nunito Sans weights in use. The design asks for 1000; Google ships static
  * cuts only to 900, and React Native cannot select a variable-font axis, so
  * 900 Black stands in for the heaviest weight.
  */
@@ -62,7 +60,7 @@ export const space = {
   rowV: 13,
 } as const;
 
-/** Budget ring geometry is fixed by the prototype: r=34 in an 84-box, stroke 9. */
+/** Budget ring geometry is fixed by the design: r=34 in an 84-box, stroke 9. */
 export const ring = {
   box: 84,
   radius: 34,
@@ -72,7 +70,7 @@ export const ring = {
 } as const;
 
 /**
- * Gauges show money LEFT and drain green -> orange -> red (brief §6).
+ * Gauges show money LEFT and drain green -> orange -> red.
  * Thresholds are the fraction of the budget line still unspent.
  */
 export function gaugeColor(fractionLeft: number): string {
@@ -81,7 +79,7 @@ export function gaugeColor(fractionLeft: number): string {
   return color.red;
 }
 
-/** SSI room bands, Appendix A §2.3 a2: green >= $300, orange $100-299, red < $100. */
+/** SSI room bands: green >= $300, orange $100-299, red < $100. */
 export function ssiRoomColor(room: number): string {
   if (room >= 300) return color.green;
   if (room >= 100) return color.orange;

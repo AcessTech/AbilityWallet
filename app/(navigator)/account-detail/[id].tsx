@@ -11,8 +11,7 @@ import { money } from '../../../src/lib/format';
 import { navigatorPill } from '../../../src/lib/pills';
 
 /**
- * Prototype screens `maria/n_acct_checking`, `n_acct_able`,
- * `n_acct_emergency`, `n_acct_ebt` — her view of one account.
+ * Her view of one account: checking, ABLE, emergency or EBT.
  */
 export default function NavigatorAccountDetail() {
   const router = useRouter();

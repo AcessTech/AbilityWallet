@@ -4,8 +4,7 @@ import { color, font } from '../theme/tokens';
 
 /**
  * The support-level bar. This is the ONE place in the whole app where levels
- * are named or numbered, and it exists only on the Navigator's Plan tab
- * (brief §2 rule 1).
+ * are named or numbered, and it exists only on the Navigator's Plan tab.
  */
 export const LEVEL_NAMES = [
   'Independent',

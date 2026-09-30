@@ -6,9 +6,8 @@ import { AddressFields, addressComplete } from '../../../src/components/AddressF
 import { useSignup } from '../../../src/lib/signup';
 
 /**
- * ob-10a Enter a different shipping address.
- * NOT IN THE PROTOTYPE (screens.md marks it SPEC). Built as the same address
- * block as frame 8. Needs Eric's review.
+ * Enter a different shipping address. Uses the same address block as the
+ * home-address screen.
  */
 export default function DifferentAddress() {
   const router = useRouter();

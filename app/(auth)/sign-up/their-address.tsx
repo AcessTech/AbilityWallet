@@ -5,7 +5,7 @@ import { Btn } from '../../../src/components/ui';
 import { AddressFields, addressComplete } from '../../../src/components/AddressFields';
 import { useSignup } from '../../../src/lib/signup';
 
-/** ob-08 Their home address. Onboarding walkthrough frame 8. */
+/** Sign-up: their home address. */
 export default function TheirAddress() {
   const router = useRouter();
   const { draft, set } = useSignup();

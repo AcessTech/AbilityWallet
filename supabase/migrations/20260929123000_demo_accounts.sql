@@ -2,7 +2,7 @@
 -- the welcome screen can offer a way straight into them; it returns only a
 -- boolean, never an address or anything else.
 --
--- When Eric wipes the test accounts, this goes false and the shortcut
+-- When the test accounts are wiped, this goes false and the shortcut
 -- disappears on its own.
 
 create or replace function demo_accounts_loaded()

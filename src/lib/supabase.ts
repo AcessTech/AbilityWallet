@@ -7,7 +7,7 @@ const url = process.env.EXPO_PUBLIC_SUPABASE_URL;
 const anonKey = process.env.EXPO_PUBLIC_SUPABASE_ANON_KEY;
 
 if (!url || !anonKey) {
-  // build_status.md §6: "No backend configured" means .env is empty or has
+  // "No backend configured" means .env is empty or has
   // placeholders. Restart Metro with -c after changing .env.
   throw new Error(
     'No backend configured. Set EXPO_PUBLIC_SUPABASE_URL and ' +

@@ -10,8 +10,8 @@ import { money } from '../../src/lib/format';
 import { MEMBER_PILL } from '../../src/lib/pills';
 
 /**
- * Prototype screen `alex/ask_change` — the calm path to asking for a change.
- * It lives in Account, never on a decline (Appendix A §2.6).
+ * The calm path to asking for a change.
+ * It lives in Account, never on a decline.
  */
 export default function AskToChange() {
   const router = useRouter();

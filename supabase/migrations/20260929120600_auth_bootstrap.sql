@@ -1,5 +1,5 @@
 -- Ability Wallet — what happens when someone signs up.
--- Sign-in is email and password (decided Sep 29). The role and name ride along
+-- Sign-in is email and password. The role and name ride along
 -- in the sign-up metadata; this trigger turns them into a profile row.
 
 create or replace function handle_new_user()
@@ -21,7 +21,7 @@ begin
   on conflict (id) do nothing;
 
   -- A Navigator starts with the default alert routing and quiet hours off
-  -- (Appendix B, Aug 12 PagerDuty model). "Card safety and fraud" is Push +
+  -- (the PagerDuty model). "Card safety and fraud" is Push +
   -- Text and is not configurable.
   if v_role = 'navigator' then
     insert into alert_prefs (navigator_id, grp, channels) values
@@ -59,7 +59,7 @@ begin
   on conflict do nothing;
 
   -- One Help thread. At level 1 the Navigator gets a separate 1:1 instead of
-  -- sharing this one (brief §2 rule 5); the RLS policy enforces that.
+  -- sharing this one; the RLS policy enforces that.
   insert into chat_threads (member_id, kind) values (p_member, 'help')
   on conflict do nothing;
   insert into chat_threads (member_id, kind) values (p_member, 'navigator_private')

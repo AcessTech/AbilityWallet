@@ -5,7 +5,7 @@ import { color, font } from '../theme/tokens';
 
 /**
  * The brand mark: navy arc, gold arc, gold coin with "A$W".
- * Traced from the inline SVG in every prototype screen header.
+ * Traced from the inline SVG in the design's screen headers.
  */
 export function Mark({ size = 30, white = false }: { size?: number; white?: boolean }) {
   return (
@@ -48,7 +48,7 @@ export function Wordmark({ size = 20, white = false }: { size?: number; white?: 
   );
 }
 
-/** Header lockup: mark + wordmark, side by side. Brief §6.8. */
+/** Header lockup: mark + wordmark, side by side. */
 export function BrandRow({ markSize = 30, wordSize = 20, white = false }) {
   return (
     <View style={{ flexDirection: 'row', alignItems: 'center', gap: 7 }}>
@@ -58,7 +58,7 @@ export function BrandRow({ markSize = 30, wordSize = 20, white = false }) {
   );
 }
 
-/** Success screens carry the lockup top centre. Brief §6.8. */
+/** Success screens carry the lockup top centre. */
 export function BrandLockup() {
   return (
     <View style={{ alignItems: 'center', paddingTop: 6, paddingBottom: 22 }}>

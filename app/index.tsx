@@ -4,7 +4,7 @@ import { View, ActivityIndicator } from 'react-native';
 import { useSession } from '../src/lib/session';
 import { color } from '../src/theme/tokens';
 
-/** Role-based routing after sign-in (brief §3). */
+/** Role-based routing after sign-in. */
 export default function Index() {
   const { loading, session, profile } = useSession();
 

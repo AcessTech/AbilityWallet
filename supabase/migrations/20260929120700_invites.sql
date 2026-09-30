@@ -1,7 +1,6 @@
 -- Ability Wallet — the Navigator's email invite to the Member.
--- Decided Sep 29: the invite goes by EMAIL. Nothing sends until the Navigator
--- taps "Send the invite" (onboarding frame 11); the account activates when the
--- Member accepts.
+-- The invite goes by EMAIL. Nothing sends until the Navigator taps "Send the
+-- invite"; the account activates when the Member accepts.
 
 alter table member_navigator
   add column if not exists invite_payload jsonb not null default '{}';

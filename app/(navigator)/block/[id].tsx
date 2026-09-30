@@ -10,10 +10,10 @@ import { longDate } from '../../../src/lib/format';
 import { navigatorPill } from '../../../src/lib/pills';
 
 /**
- * Prototype screens `maria/nblockdetail`, `n_block_cat` and `n_remove_block`.
+ * One block: its detail, a blocked category, and removing a block.
  *
  * Shows blocked-since, attempts stopped and who agreed. Removal is dual
- * consent: neither side can unilaterally unprotect (Appendix A §6.5).
+ * consent: neither side can unilaterally unprotect.
  */
 export default function BlockDetail() {
   const router = useRouter();

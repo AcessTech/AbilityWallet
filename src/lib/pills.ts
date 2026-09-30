@@ -1,5 +1,5 @@
 /**
- * The action pill in every header (brief §6.8).
+ * The action pill in every header.
  * The Member's says "Need help?"; the Navigator's says "Message {first name}".
  */
 export const MEMBER_PILL = 'Need help?';

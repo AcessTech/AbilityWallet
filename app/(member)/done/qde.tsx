@@ -6,7 +6,7 @@ import { supabase } from '../../../src/lib/supabase';
 import { useSession } from '../../../src/lib/session';
 import { money } from '../../../src/lib/format';
 
-/** Prototype screen `alex/qde_done` — "Paid back from ABLE". */
+/** "Paid back from ABLE" success screen. */
 export default function QdePaidBack() {
   const router = useRouter();
   const { amount, merchant } = useLocalSearchParams<{ amount: string; merchant: string }>();

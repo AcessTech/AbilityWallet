@@ -51,7 +51,7 @@ export function Screen({
 
 /**
  * Tab-screen header: brand mark + wordmark on the left, an action pill on the
- * right, no page title (brief §6, §6.8).
+ * right, no page title.
  */
 export function BrandHeader({
   pillLabel,
@@ -72,7 +72,7 @@ export function BrandHeader({
 
 /**
  * Page-title header: title + help pill. Used on the Member's Card, Spend, Save
- * and Account tabs; Card also shows the small mark (brief §6).
+ * and Account tabs; Card also shows the small mark.
  */
 export function TitleHeader({
   title,
@@ -97,9 +97,9 @@ export function TitleHeader({
 }
 
 /**
- * Sub-page header, as the prototype draws it: a round white back button, the
- * mark and wordmark in the middle, and the action pill on the right
- * (brief §6.8 — the pill appears on every screen, sub-pages included).
+ * Sub-page header: a round white back button, the mark and wordmark in the
+ * middle, and the action pill on the right (the pill appears on every
+ * screen, sub-pages included).
  */
 export function SubHeader({
   pillLabel,
@@ -304,7 +304,7 @@ export function Btn({
   );
 }
 
-/** Static Yes / No pair. Never dynamic per-purchase button text (brief §6). */
+/** Static Yes / No pair. Never dynamic per-purchase button text. */
 export function YesNo({
   onYes,
   onNo,
@@ -368,7 +368,7 @@ export function Ask({
   );
 }
 
-/** A notice strip. Never competes with a question for the slot (Appendix A §1). */
+/** A notice strip. Never competes with a question for the slot. */
 export function Strip({ text, onPress }: { text: string; onPress?: () => void }) {
   return (
     <Pressable onPress={onPress} style={({ pressed }) => [s.strip, pressed && s.pressed]}>
@@ -415,7 +415,7 @@ export function Logo({ text, bg, size = 40 }: { text: string; bg: string; size?:
   );
 }
 
-/** A budget ring. Geometry fixed by the prototype: r=34, stroke 9. */
+/** A budget ring. Geometry fixed by the design: r=34, stroke 9. */
 export function Ring({
   label,
   sub = 'left',
@@ -732,7 +732,7 @@ export { s as uiStyles };
 
 /* ------------------------------------------------- option buttons -------- */
 
-/** The `.opt` button from the prototype: big tappable choice, optional
+/** An option button: big tappable choice, optional
  *  description line, navy border when selected. */
 export function Option({
   label,

@@ -1,4 +1,4 @@
--- Ability Wallet — people, accounts, money and the category spine. Brief §4.
+-- Ability Wallet — people, accounts, money and the category spine.
 
 -- ------------------------------------------------------------- profiles ----
 
@@ -41,7 +41,7 @@ create table member_navigator (
   level        int  not null default 2 check (level between 1 and 5),
   status       link_status not null default 'invited',
   is_primary   boolean not null default true,
-  -- Invite lifecycle (brief §7 / Appendix B A18-A20). The invite goes by email.
+  -- Invite lifecycle (alerts A18-A20). The invite goes by email.
   invite_email        text,
   invite_token        text unique,
   invite_sent_at      timestamptz,
@@ -60,7 +60,7 @@ create unique index member_navigator_active_pair_idx
 
 -- ------------------------------------------------------------- accounts ----
 -- Simulated ledger. A real card ledger also needs pending vs posted balances;
--- not modelled in the MVP (brief §4).
+-- not modelled in the MVP.
 
 create table accounts (
   id           uuid primary key default gen_random_uuid(),
@@ -70,7 +70,7 @@ create table accounts (
   balance      numeric(12,2) not null default 0,
   program_name text,                    -- ABLE: the state program
   -- Back-payment balances carry their own 9-month exclusion clock
-  -- (Appendix A §2.6b, POMS SI 01130.600).
+  -- (POMS SI 01130.600).
   exclusion_ends_on date,
   created_at   timestamptz not null default now()
 );
@@ -80,7 +80,7 @@ create unique index accounts_one_per_kind_idx
   on accounts(member_id, kind) where kind in ('checking','able','emergency','ebt');
 
 -- ----------------------------------------------------- category spine ------
--- The 14-category spine (prd.md §5.6). Data, not code. `qde` is null for the
+-- The 14-category spine. Data, not code. `qde` is null for the
 -- categories that can never be a qualified disability expense.
 
 create table spine_categories (
@@ -112,7 +112,7 @@ create table member_cards (
 create index member_cards_member_idx on member_cards(member_id);
 
 -- --------------------------------------------------------- budget lines ----
--- The unified model (Appendix A §0.5): the goal, the budget and the limit are
+-- The unified model: the goal, the budget and the limit are
 -- one object; the mode changes what happens at the line. Spend is DERIVED from
 -- the ledger, never stored, so it cannot drift.
 
@@ -125,7 +125,7 @@ create table budget_lines (
   period         budget_period not null default 'month',
   mode           budget_mode   not null default 'guide',
   -- A tightening awaiting the Member's Yes. The OLD value stays live until
-  -- he answers (brief §2 rule 3).
+  -- he answers.
   pending_change jsonb,
   sort_order     int not null default 0,
   archived_at    timestamptz,
@@ -145,7 +145,7 @@ create table transactions (
   mcc             text,
   amount          numeric(12,2) not null, -- negative = money out, positive = money in
   status          txn_status not null default 'posted',
-  -- Stored in Appendix B's exact wording ("over the Games limit"); templates
+  -- Stored in the alert's exact wording ("over the Games limit"); templates
   -- must not prefix it with "more than the".
   declined_reason text,
   category        text,
@@ -181,7 +181,7 @@ create table blocks (
 
 create index blocks_member_idx on blocks(member_id) where status = 'active';
 
--- Always enforced, not per member, not configurable (Appendix A §6.5).
+-- Always enforced, not per member, not configurable.
 create table known_scams (
   id           uuid primary key default gen_random_uuid(),
   merchant_key text not null unique,

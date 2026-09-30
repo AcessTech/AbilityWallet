@@ -5,7 +5,7 @@ import { Option } from '../../../src/components/ui';
 import { useSignup } from '../../../src/lib/signup';
 import { addressLine } from '../../../src/lib/format';
 
-/** ob-09 Where to send the card. Their home is the default. Frame 9. */
+/** Where to send the card. Their home is the default. */
 export default function CardAddress() {
   const router = useRouter();
   const { draft, set } = useSignup();

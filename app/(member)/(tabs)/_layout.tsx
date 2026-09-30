@@ -2,7 +2,7 @@ import React from 'react';
 import { Tabs } from 'expo-router';
 import { TabBar } from '../../../src/components/TabBar';
 
-/** Member IA: Home · Card · Spend · Save · Account (brief §6). */
+/** Member IA: Home · Card · Spend · Save · Account. */
 export default function MemberTabs() {
   return (
     <Tabs tabBar={(p) => <TabBar {...p} />} screenOptions={{ headerShown: false }}>

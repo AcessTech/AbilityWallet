@@ -13,10 +13,10 @@ import { color, font } from '../../../src/theme/tokens';
 import { navigatorPill } from '../../../src/lib/pills';
 
 /**
- * Navigator transaction detail. Prototype screen `maria/ntxn`.
+ * Navigator transaction detail.
  *
  * Her side of a decline is red and says "Declined", with the reason and the
- * real numbers, plus a row into Plan to adjust the limit (Appendix A §6.2).
+ * real numbers, plus a row into Plan to adjust the limit.
  */
 export default function NavigatorTxnDetail() {
   const router = useRouter();

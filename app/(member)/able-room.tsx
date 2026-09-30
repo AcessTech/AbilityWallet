@@ -8,8 +8,8 @@ import { money } from '../../src/lib/format';
 import { MEMBER_PILL } from '../../src/lib/pills';
 
 /**
- * Prototype screen `alex/able_room` — "Room to add this year".
- * The 2026 ABLE contribution cap is $20,000 (prd.md §5.5); the number lives in
+ * "Room to add this year".
+ * The 2026 ABLE contribution cap is $20,000; the number lives in
  * app_config because it changes annually.
  */
 export default function AbleRoom() {

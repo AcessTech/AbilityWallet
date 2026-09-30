@@ -5,9 +5,9 @@ import { useSession } from '../../src/lib/session';
 import { MEMBER_PILL } from '../../src/lib/pills';
 
 /**
- * Prototype screen `alex/nav_detail` — who is on my account.
+ * Who is on my account.
  * His side never shows a level name or number: only what the person can do,
- * in plain words (brief §2 rule 1).
+ * in plain words.
  */
 export default function NavigatorDetail() {
   const router = useRouter();

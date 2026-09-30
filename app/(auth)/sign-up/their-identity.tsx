@@ -6,8 +6,8 @@ import { useSignup } from '../../../src/lib/signup';
 import { maskDate, maskSsn, parseMaskedDate } from '../../../src/lib/format';
 
 /**
- * ob-07 Confirm their identity. Onboarding walkthrough frame 7 — date of birth
- * and Social Security number, no explainer line (Eric).
+ * Confirm their identity — date of birth and Social Security number, no
+ * explainer line.
  */
 export default function TheirIdentity() {
   const router = useRouter();

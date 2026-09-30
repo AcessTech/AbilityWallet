@@ -13,8 +13,8 @@ import { maskDate, parseMaskedDate } from '../../src/lib/format';
 import { navigatorPill } from '../../src/lib/pills';
 
 /**
- * Prototype screens `maria/n_add_someone`, `n_add_2` and `n_invite_sent` —
- * a Navigator supporting more than one person. Same invite flow as sign-up.
+ * Add someone — a Navigator supporting more than one person. Same invite flow
+ * as sign-up.
  */
 export default function AddSomeone() {
   const router = useRouter();

@@ -8,9 +8,9 @@ import { money } from '../lib/format';
 
 /**
  * Every success screen: brand lockup top centre, a 2–4 word summary, one
- * detail line, then only the balances that changed, and one gold button back
- * (Appendix A §6.3). There is never a double-confirm before this — if the ask
- * was a decision card, tapping Yes already executed it.
+ * detail line, then only the balances that changed, and one gold button back.
+ * There is never a double-confirm before this — if the ask was a decision
+ * card, tapping Yes already executed it.
  */
 export function Success({
   title,

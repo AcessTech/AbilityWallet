@@ -7,7 +7,7 @@ import { BrandRow } from './Brand';
 import { Icon } from './Icon';
 
 /**
- * The onboarding screen shell from docs/onboarding_walkthrough_aug7.html:
+ * The onboarding screen shell:
  * brandbar (back + mark + wordmark), question heading, sub-line, fields,
  * spacer, primary button at the bottom.
  */

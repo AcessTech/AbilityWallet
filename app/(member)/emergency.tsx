@@ -12,10 +12,10 @@ import { color, font } from '../../src/theme/tokens';
 import { MEMBER_PILL } from '../../src/lib/pills';
 
 /**
- * Prototype screens `alex/emergency_use` and `emergency_done`.
+ * Use emergency money.
  *
  * He never needs permission to reach his emergency money. There is no approval
- * step: the alert to his Navigator is the whole mechanism (Appendix B A10).
+ * step: the alert to his Navigator (A10) is the whole mechanism.
  */
 export default function UseEmergencyMoney() {
   const router = useRouter();

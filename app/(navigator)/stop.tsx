@@ -6,7 +6,7 @@ import { useSession } from '../../src/lib/session';
 import { navigatorPill } from '../../src/lib/pills';
 
 /**
- * Prototype screen `maria/n_stop` — offboarding.
+ * Offboarding: she stops being a Navigator.
  * The account stays open and keeps working; only her part ends.
  */
 export default function StopBeingNavigator() {

@@ -1,4 +1,4 @@
--- Ability Wallet — the Help thread. Brief §2 rule 5, Appendix A §6.1.
+-- Ability Wallet — the Help thread.
 
 create or replace function send_chat_message(
   p_member uuid,
@@ -44,7 +44,7 @@ end;
 $$;
 
 /*
- * The AI yield rule (brief §2 rule 5): when the Navigator posts, the AI goes
+ * The AI yield rule: when the Navigator posts, the AI goes
  * quiet. It speaks again only when directly prompted, or when the thread has
  * been silent for about 90 seconds with an unanswered Member question.
  */
@@ -103,7 +103,7 @@ end;
 $$;
 
 -- The confirmation tap. Only the Member can confirm, only within existing
--- permissions, and every execution is logged (brief §2 rule 4).
+-- permissions, and every execution is logged.
 create or replace function confirm_chat_action(p_message uuid, p_yes boolean)
 returns jsonb
 language plpgsql security definer set search_path = public as $$
@@ -175,8 +175,7 @@ $$;
 
 -- "Report a problem" opens the Help chat with the transaction attached and the
 -- AI asking the opening question. There is no category sheet: categories
--- invite confusion and false disputes, and the real case is fraud
--- (Appendix A §6.2).
+-- invite confusion and false disputes, and the real case is fraud.
 create or replace function start_problem_report(p_member uuid, p_txn_id uuid)
 returns void
 language plpgsql security definer set search_path = public as $$
@@ -211,7 +210,7 @@ $$;
 
 -- Fraud: lock the card, alert the Navigator on the always-on group, open a
 -- dispute. A wrongly locked card is a small problem; a real thief with a
--- working card is not (Appendix C).
+-- working card is not.
 create or replace function report_fraud(p_member uuid, p_txn_id uuid)
 returns jsonb
 language plpgsql security definer set search_path = public as $$
@@ -253,7 +252,7 @@ begin
 end;
 $$;
 
--- Decided Sep 23: this alerts Ability Wallet support, who follow up with the
+-- This alerts Ability Wallet support, who follow up with the
 -- Member. It NEVER notifies the Navigator.
 create or replace function escalate_safety_concern(p_member uuid, p_note text)
 returns void

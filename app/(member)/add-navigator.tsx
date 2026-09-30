@@ -8,8 +8,8 @@ import { useSession } from '../../src/lib/session';
 import { MEMBER_PILL } from '../../src/lib/pills';
 
 /**
- * Prototype screens `alex/add_nav`, `add_nav_2` and `add_nav_sent`.
- * He asks someone to help; they see what the second screen describes.
+ * Add a Navigator. He asks someone to help; they see what the second screen
+ * describes.
  */
 export default function AddNavigator() {
   const router = useRouter();

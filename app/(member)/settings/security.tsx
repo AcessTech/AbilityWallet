@@ -6,7 +6,7 @@ import { supabase } from '../../../src/lib/supabase';
 import { useSession } from '../../../src/lib/session';
 import { MEMBER_PILL } from '../../../src/lib/pills';
 
-/** Face ID after first sign-in (brief §3). */
+/** Face ID after first sign-in. */
 export default function MemberSecurity() {
   const router = useRouter();
   const { profile, refresh } = useSession();

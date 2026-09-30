@@ -5,7 +5,7 @@ import { useSession } from '../../../src/lib/session';
 import { addressLine } from '../../../src/lib/format';
 import { MEMBER_PILL } from '../../../src/lib/pills';
 
-/** Prototype screen `alex/my_info`. */
+/** The Member's own contact and sign-in details. */
 export default function MyInfo() {
   const router = useRouter();
   const { profile, signOut } = useSession();

@@ -1,4 +1,4 @@
--- Ability Wallet — consents. Brief §2 rule 3 and Appendix A §6.4.
+-- Ability Wallet — consents.
 --
 --   TIGHTEN = ask first. The change is inert until he taps Yes; the old value
 --             stays live.

@@ -5,8 +5,7 @@ import { Card, Empty, Screen, SubHeader, Title } from '../components/ui';
 /**
  * Statements, tax forms and benefit reports all render the same way: a list of
  * documents, empty until the account has been open long enough to have any.
- * Prototype screens `alex/statements`, `alex/tax_forms`,
- * `alex/benefit_reports` and their Navigator-side twins.
+ * Used on both the Member and Navigator sides.
  */
 export function DocumentList({
   title,

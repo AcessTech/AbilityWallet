@@ -4,7 +4,7 @@ import { OnboardScreen } from '../../../src/components/Onboard';
 import { Btn, Field } from '../../../src/components/ui';
 import { useSignup } from '../../../src/lib/signup';
 
-/** ob-04 Your name. Onboarding walkthrough frame 4. */
+/** Sign-up: your name. */
 export default function YourName() {
   const router = useRouter();
   const { draft, set } = useSignup();

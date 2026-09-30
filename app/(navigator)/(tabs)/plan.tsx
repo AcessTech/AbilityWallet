@@ -23,7 +23,7 @@ interface Plan {
 }
 
 /**
- * Navigator Plan tab. Prototype screen `maria/nplan`: the support level ->
+ * Navigator Plan tab: the support level ->
  * the unified budget list -> Blocked -> shared goals -> Analytics rows.
  * This tab is the only place in the app where levels are named.
  */

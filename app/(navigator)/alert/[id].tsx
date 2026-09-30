@@ -6,7 +6,7 @@ import { supabase } from '../../../src/lib/supabase';
 import { useSession } from '../../../src/lib/session';
 import { navigatorPill } from '../../../src/lib/pills';
 
-/** Prototype screen `maria/n_alert` — one alert, opened from Home or Activity. */
+/** One alert, opened from Home or Activity. */
 export default function AlertDetail() {
   const router = useRouter();
   const { id } = useLocalSearchParams<{ id: string }>();

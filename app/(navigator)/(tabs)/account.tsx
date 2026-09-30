@@ -10,7 +10,7 @@ import { LEVEL_NAMES } from '../../../src/features/LevelBar';
 import { IS_TEST_BUILD } from '../../../src/lib/testBuild';
 
 /**
- * Navigator Account tab. Prototype screen `maria/naccount`: her profile card
+ * Navigator Account tab: her profile card
  * -> People I support -> Documents -> Settings -> Support -> Sign out.
  */
 export default function NavigatorAccount() {

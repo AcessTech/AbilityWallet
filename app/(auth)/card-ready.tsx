@@ -5,8 +5,8 @@ import { Btn, CardArt } from '../../src/components/ui';
 import { useSession } from '../../src/lib/session';
 
 /**
- * ob-14 Your card is ready. Onboarding walkthrough frame 14 — card art, "Add
- * to Apple Wallet", "Not now". No back button.
+ * Your card is ready — card art, "Add to Apple Wallet", "Not now". No back
+ * button.
  */
 export default function CardReady() {
   const router = useRouter();

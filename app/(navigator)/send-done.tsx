@@ -6,7 +6,7 @@ import { supabase } from '../../src/lib/supabase';
 import { useSession } from '../../src/lib/session';
 import { money } from '../../src/lib/format';
 
-/** Prototype screen `maria/nsenddone` — "Money sent". */
+/** "Money sent" confirmation. */
 export default function SendDone() {
   const router = useRouter();
   const { amount, repeat } = useLocalSearchParams<{ amount: string; repeat: string }>();

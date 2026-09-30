@@ -2,7 +2,7 @@ import React from 'react';
 import { useRouter } from 'expo-router';
 import { Success } from '../../../src/features/Success';
 
-/** Prototype screen `alex/card_lost_done` — "Card canceled". */
+/** "Card canceled" confirmation. */
 export default function CardReported() {
   const router = useRouter();
   return (

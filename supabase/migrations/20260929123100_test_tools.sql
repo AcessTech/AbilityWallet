@@ -1,8 +1,8 @@
 -- Ability Wallet — the tools a tester needs on their own account.
 --
--- Decided by Eric, Sep 29: testers make their own account on one side of the
--- app and need a way to add money, run the stories in scenarios.md, and start
--- over. This widens Appendix A §4.4, which had test tools as development-only.
+-- Testers make their own account on one side of the app and need a way to
+-- add money, run the test scenarios, and start over. These tools are
+-- available in test builds, not only in development.
 --
 -- Every function here works ONLY on the caller's own account, or on a member
 -- the caller actively navigates. None of them can touch anyone else's data.
@@ -66,7 +66,7 @@ begin
   perform test_guard(p_member);
 
   -- Transfers go before linked_banks, or the ON DELETE SET NULL on
-  -- transfers.from_linked_bank trips transfer_has_one_source (Appendix A §4.4).
+  -- transfers.from_linked_bank trips transfer_has_one_source.
   delete from transfers          where member_id = p_member;
   delete from home_cards         where member_id = p_member;
   delete from chat_messages      where thread_id in (select id from chat_threads where member_id = p_member);
@@ -130,7 +130,7 @@ end;
 $$;
 
 -- ------------------------------------------------------- the scenarios ----
--- The stories in scenarios.md, each one setting up what it needs and then
+-- The test scenarios, each one setting up what it needs and then
 -- firing for real through the same engine the app uses.
 
 create or replace function test_run_scenario(p_member uuid, p_code text)

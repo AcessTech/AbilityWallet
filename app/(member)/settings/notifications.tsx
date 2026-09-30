@@ -4,11 +4,10 @@ import { Card, Muted, Row, Screen, SubHeader, Title } from '../../../src/compone
 import { MEMBER_PILL } from '../../../src/lib/pills';
 
 /**
- * Prototype screen `alex/m_notifs`.
+ * The Member's notification settings.
  *
  * There are no Member quiet hours — the phone's own settings control timing
- * for him (Appendix B ground rule 3). His lock screen never shows amounts,
- * merchants or declines (ground rule 5).
+ * for him. His lock screen never shows amounts, merchants or declines.
  */
 export default function MemberNotifications() {
   const router = useRouter();

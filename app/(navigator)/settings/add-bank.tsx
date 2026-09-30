@@ -7,8 +7,8 @@ import { useSession } from '../../../src/lib/session';
 import { navigatorPill } from '../../../src/lib/pills';
 
 /**
- * Prototype screens `maria/n_add_bank`, `n_bank_login`, `n_bank_choose`,
- * `n_bank_linked`, and the "Open an account" cross-sell.
+ * Link a bank: pick the bank, sign in, choose the account, confirm — plus the
+ * "Open an account" cross-sell.
  *
  * The real thing is a Plaid-style hand-off. Here it is simulated: no bank
  * credentials are ever collected or stored.

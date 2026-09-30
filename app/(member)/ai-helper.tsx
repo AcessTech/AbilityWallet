@@ -6,11 +6,11 @@ import { useSession } from '../../src/lib/session';
 import { MEMBER_PILL } from '../../src/lib/pills';
 
 /**
- * Prototype screens `alex/ai_setup` and `alex/ai_on`.
+ * Setting up and turning on the AI helper.
  *
  * Turning it on: at Firm limits and Fiduciary the Navigator has to agree
  * (a consent on her side); at Monitored and Flexible she is told (A14); at
- * Independent nothing happens (decided Sep 23).
+ * Independent nothing happens.
  */
 export default function AiHelper() {
   const router = useRouter();

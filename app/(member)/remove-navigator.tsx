@@ -6,9 +6,9 @@ import { useSession } from '../../src/lib/session';
 import { MEMBER_PILL } from '../../src/lib/pills';
 
 /**
- * Prototype screen `alex/remove_nav`.
+ * Remove a Navigator.
  * Taking someone off the account is a decrease in oversight, so it is his
- * right and needs nobody's approval (Appendix A §2.3 a3).
+ * right and needs nobody's approval.
  */
 export default function RemoveNavigator() {
   const router = useRouter();

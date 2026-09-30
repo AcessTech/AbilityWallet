@@ -9,7 +9,7 @@ import { DEMO_ACCOUNTS, DEMO_PASSWORD } from '../lib/demo';
 import { color, font, radius } from '../theme/tokens';
 
 /**
- * The demo switch, copied from the prototype's own topbar: two segments,
+ * The demo switch, copied from the design's own topbar: two segments,
  * "Alex" and "Maria", gold for the one you are in.
  *
  * It shows whenever the two fake accounts are loaded, whoever is signed in —

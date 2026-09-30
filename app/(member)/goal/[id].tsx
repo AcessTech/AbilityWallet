@@ -10,7 +10,7 @@ import { money } from '../../../src/lib/format';
 import { color } from '../../../src/theme/tokens';
 import { MEMBER_PILL } from '../../../src/lib/pills';
 
-/** Shared savings goals appear on her Plan tab (decided Sep 23). */
+/** Shared savings goals appear on her Plan tab. */
 export default function MemberGoal() {
   const router = useRouter();
   const { id } = useLocalSearchParams<{ id: string }>();

@@ -14,9 +14,9 @@ export interface TxnLike {
 }
 
 /**
- * One transaction row, as the prototype draws it: logo tile, name, date,
+ * One transaction row: logo tile, name, date,
  * amount. A decline on the Member's side is neutral — "Didn't go through",
- * never red, never "Declined" (brief §2 rule 8).
+ * never red, never "Declined".
  */
 export function TxnRow({
   txn,

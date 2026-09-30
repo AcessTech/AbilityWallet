@@ -8,8 +8,7 @@ import { longDate, money } from '../../../src/lib/format';
 import { navigatorPill } from '../../../src/lib/pills';
 
 /**
- * Prototype screen `maria/n_billing` — subscription and billing live in her
- * Account section (decided Sep 23).
+ * Subscription and billing live in her Account section.
  */
 export default function Billing() {
   const router = useRouter();

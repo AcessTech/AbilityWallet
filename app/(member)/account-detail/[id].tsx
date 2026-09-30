@@ -10,9 +10,8 @@ import { money } from '../../../src/lib/format';
 import { MEMBER_PILL } from '../../../src/lib/pills';
 
 /**
- * One account. Prototype screens `alex/acct_checking`, `acct_able`,
- * `acct_emergency`, `acct_ebt` — account rows open account detail screens
- * (decided Sep 23).
+ * One account: checking, ABLE, emergency or EBT. Account rows open account
+ * detail screens.
  */
 export default function MemberAccountDetail() {
   const router = useRouter();

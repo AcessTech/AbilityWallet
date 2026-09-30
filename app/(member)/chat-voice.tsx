@@ -4,10 +4,10 @@ import { Btn, Card, Muted, Screen, SubHeader, Title } from '../../src/components
 import { MEMBER_PILL } from '../../src/lib/pills';
 
 /**
- * Prototype screen `alex/chat_voice` — talking instead of typing.
+ * Voice chat — talking instead of typing.
  *
- * NOT BUILT: transcription is a separate service and is not specified anywhere
- * (Appendix C, open item 3). Rendered as a calm state rather than a dead tap.
+ * NOT BUILT: transcription is a separate service and is not specified yet.
+ * Rendered as a calm state rather than a dead tap.
  */
 export default function ChatVoice() {
   const router = useRouter();

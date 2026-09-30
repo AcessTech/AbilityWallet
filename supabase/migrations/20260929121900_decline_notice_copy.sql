@@ -1,6 +1,6 @@
 -- The decline notice was naming the budget line as "Games limit" because it
 -- parsed the stored reason string. Carry the line's name in the authorization
--- result instead, and keep declined_reason in Appendix B's exact wording.
+-- result instead, and keep declined_reason in the alert's exact wording.
 
 create or replace function authorize_purchase(
   p_member uuid,

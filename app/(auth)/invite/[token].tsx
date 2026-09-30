@@ -15,13 +15,9 @@ type Peek =
 type Step = 'loading' | 'password' | 'dob' | 'accept' | 'card' | 'dead';
 
 /**
- * The Member's side of the invite: ob-12p create a password, ob-12 confirm the
- * date of birth (ob-12a on a miss, ob-12b after two), ob-13 the consent moment,
- * ob-14 the card.
- *
- * ob-12p, ob-12a, ob-12b, ob-31 and ob-32 are NOT IN THE PROTOTYPE
- * (screens.md marks them SPEC). Built in the onboarding walkthrough's own
- * shape. Need Eric's review.
+ * The Member's side of the invite: create a password, confirm the date of
+ * birth (an inline miss, then locked after two), the consent moment, then the
+ * card.
  */
 export default function AcceptInvite() {
   const router = useRouter();
@@ -47,7 +43,7 @@ export default function AcceptInvite() {
 
   if (step === 'loading' || !peek) return <Loading />;
 
-  /* ob-31 / ob-32 / ob-12b — the dead ends. */
+  /* The dead ends. */
   if (step === 'dead' || peek.state !== 'ok') {
     const copy = {
       not_found: ['This link doesn’t work', 'Ask for a new one.'],
@@ -69,7 +65,7 @@ export default function AcceptInvite() {
   const navName = peek.navigator_first_name || 'Someone';
   const myName = `${peek.member_first_name} ${peek.member_last_name}`.trim();
 
-  /* ob-12p — create a password. */
+  /* Create a password. */
   if (step === 'password') {
     return (
       <OnboardScreen
@@ -118,7 +114,7 @@ export default function AcceptInvite() {
     );
   }
 
-  /* ob-12 — confirm the date of birth. ob-12a is the inline miss. */
+  /* Confirm the date of birth. A miss shows inline. */
   if (step === 'dob') {
     return (
       <OnboardScreen
@@ -185,7 +181,7 @@ export default function AcceptInvite() {
     );
   }
 
-  /* ob-13 — the consent moment. No capability text, no extra links. */
+  /* The consent moment. No capability text, no extra links. */
   if (step === 'accept') {
     return (
       <OnboardScreen
@@ -212,7 +208,7 @@ export default function AcceptInvite() {
     );
   }
 
-  /* ob-14 — the card. */
+  /* The card. */
   return (
     <OnboardScreen
       showBack={false}

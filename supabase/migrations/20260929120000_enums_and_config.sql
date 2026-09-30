@@ -1,5 +1,5 @@
 -- Ability Wallet — enums, config and reference data.
--- Brief §4 (data model), Appendix A §4.5 (all thresholds are config, not code).
+-- All thresholds are config, not code.
 
 create extension if not exists "pgcrypto";
 create extension if not exists "pg_cron";
@@ -30,12 +30,12 @@ create type income_kind       as enum ('ssi','ssdi','wages','other');
 create type alert_group       as enum ('card_safety','declines','limits','money','benefits','questions','setup');
 create type notify_channel    as enum ('push','text','email','in_app');
 
--- Support levels are integers 1-5 everywhere. The MEMBER NEVER SEES THESE
--- (brief §2 rule 1); they surface only on the Navigator's Plan tab.
+-- Support levels are integers 1-5 everywhere. The MEMBER NEVER SEES THESE;
+-- they surface only on the Navigator's Plan tab.
 --   1 Independent · 2 Monitored · 3 Flexible limits · 4 Firm limits · 5 Fiduciary
 
 -- --------------------------------------------------------------- config ----
--- Appendix A §4.5: SSI limit, BUFFER, MIN_ASK, daily cap and expiry windows
+-- SSI limit, BUFFER, MIN_ASK, daily cap and expiry windows
 -- are versioned config because the real-world numbers change annually.
 
 create table app_config (

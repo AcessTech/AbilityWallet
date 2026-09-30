@@ -16,7 +16,7 @@ export function moneyShort(n: number | string | null | undefined): string {
   return money(Math.round(Number(n ?? 0)), { cents: false });
 }
 
-/** "Yesterday", "Jul 17" — the prototype's transaction sub-line. */
+/** "Yesterday", "Jul 17" — the transaction sub-line. */
 export function shortDate(iso: string): string {
   const d = new Date(iso);
   const now = new Date();
@@ -101,7 +101,7 @@ export function maskSsn(input: string): string {
   return `${d.slice(0, 3)}-${d.slice(3, 5)}-${d.slice(5)}`;
 }
 
-/** "2214 Birchwood Ave, Columbus, OH" — the one-line form used on ob-09. */
+/** "2214 Birchwood Ave, Columbus, OH" — the one-line form used in sign-up. */
 export function addressLine(a: {
   line1?: string | null;
   city?: string | null;

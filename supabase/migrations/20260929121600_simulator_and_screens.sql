@@ -1,7 +1,7 @@
 -- Ability Wallet — the transaction simulator and the two Home screens.
 
 -- ----------------------------------------------------------- simulator ----
--- Brief §5 item 6, MVP only. Injects fake purchases, including declines, so
+-- MVP only. Injects fake purchases, including declines, so
 -- the flows are testable on the phone. Lives behind Member -> Account -> Test
 -- tools in dev builds.
 
@@ -67,7 +67,7 @@ end;
 $$;
 
 -- ---------------------------------------------------------- Member Home ----
--- Decision slot -> accounts -> budget -> recent (Appendix A §6.1).
+-- Decision slot -> accounts -> budget -> recent.
 
 create or replace function member_home(p_member uuid default null)
 returns jsonb
@@ -117,7 +117,7 @@ $$;
 
 -- ------------------------------------------------------ Navigator Home ----
 -- Most recent alert -> accounts -> budget -> send money -> recent.
--- Newest first, like missed calls (decided Sep 23).
+-- Newest first, like missed calls.
 
 create or replace function navigator_home(p_member uuid)
 returns jsonb

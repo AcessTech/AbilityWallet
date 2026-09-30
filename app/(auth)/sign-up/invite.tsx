@@ -10,9 +10,8 @@ import { parseMaskedDate } from '../../../src/lib/format';
 import { color, font, radius } from '../../../src/theme/tokens';
 
 /**
- * ob-11 Send the invite. Onboarding walkthrough frame 11 — the exact message
- * is shown before it goes, and nothing sends until this tap.
- * The invite goes by EMAIL (decided Sep 29); frame 11 showed a text message.
+ * Send the invite. The exact message is shown before it goes, and nothing
+ * sends until this tap. The invite goes by email.
  */
 export default function SendInvite() {
   const router = useRouter();

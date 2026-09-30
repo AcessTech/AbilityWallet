@@ -1,6 +1,6 @@
 -- Ability Wallet — the Navigator sending money.
 -- It is funded from her linked external bank; her money never sits in the
--- system, so there is no balance to debit on our side (brief §2 rule 10).
+-- system, so there is no balance to debit on our side.
 
 create or replace function navigator_send_money(
   p_member uuid,
@@ -60,7 +60,7 @@ begin
 end;
 $$;
 
--- The repeating monthly send (decided Sep 23), run by the nightly sweep.
+-- The repeating monthly send, run by the nightly sweep.
 create or replace function run_repeating_transfers()
 returns void
 language plpgsql security definer set search_path = public as $$

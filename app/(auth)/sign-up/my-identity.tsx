@@ -5,7 +5,7 @@ import { Btn, Field } from '../../../src/components/ui';
 import { useSignup } from '../../../src/lib/signup';
 import { maskDate, maskSsn, parseMaskedDate } from '../../../src/lib/format';
 
-/** ob-20 Confirm your identity — the self-signup path. Frame 15. */
+/** Confirm your identity — the self-signup path. */
 export default function MyIdentity() {
   const router = useRouter();
   const { draft, set } = useSignup();

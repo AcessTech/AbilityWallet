@@ -7,9 +7,8 @@ import { longDate, money } from '../../../src/lib/format';
 import { MEMBER_PILL } from '../../../src/lib/pills';
 
 /**
- * Prototype screens `alex/save_ss` and `alex/save_acme` — one predicted
- * deposit. These are dated predictions, not a restatement of a schedule
- * (Appendix A §2.7).
+ * One predicted deposit (a benefit payment or a paycheck). These are dated
+ * predictions, not a restatement of a schedule.
  */
 export default function ComingIn() {
   const router = useRouter();

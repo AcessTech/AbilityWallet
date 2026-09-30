@@ -5,12 +5,8 @@ import { Btn, Field, Hint } from '../../../src/components/ui';
 import { useSignup } from '../../../src/lib/signup';
 
 /**
- * ob-02 Create account — email and password.
- *
- * NOT IN THE PROTOTYPE as drawn: frame 2 of the onboarding walkthrough asks
- * for a phone number and texts a code, which the Sep 29 decision replaced.
- * Built in the same shape (question, sub-line, fields, Continue).
- * Needs Eric's review.
+ * Create account — email and password. Same shape as the other onboarding
+ * screens (question, sub-line, fields, Continue).
  */
 export default function CreateAccount() {
   const router = useRouter();

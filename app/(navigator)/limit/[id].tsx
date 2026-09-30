@@ -11,11 +11,11 @@ import { money } from '../../../src/lib/format';
 import { navigatorPill } from '../../../src/lib/pills';
 
 /**
- * Prototype screen `maria/nlimit` — edit a limit.
+ * Edit a limit.
  *
  * TIGHTEN = ask first: the button becomes "Ask {name}" with a gold notice, and
  * the old value stays live until he answers. LOOSEN = the button stays "Save"
- * and it applies immediately with a notice to him (Appendix A §6.4).
+ * and it applies immediately with a notice to him.
  */
 export default function EditLimit() {
   const router = useRouter();

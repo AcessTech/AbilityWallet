@@ -13,13 +13,12 @@ import { color, font } from '../../../src/theme/tokens';
 import { MEMBER_PILL } from '../../../src/lib/pills';
 
 /**
- * Member transaction detail. Prototype screens `alex/txn` and
- * `alex/txn_declined`.
+ * Member transaction detail, including declined purchases.
  *
  * A decline on his side is neutral: the pill reads "Didn't go through", never
- * red, never "Declined" (brief §2 rule 8). One action row: Report a problem,
+ * red, never "Declined". One action row: Report a problem,
  * which opens the Help chat with the transaction attached — there is no
- * category sheet (Appendix A §6.2).
+ * category sheet.
  */
 export default function MemberTxnDetail() {
   const router = useRouter();
@@ -102,7 +101,7 @@ export default function MemberTxnDetail() {
 }
 
 /**
- * declined_reason is stored in Appendix B's exact wording ("over the Games
+ * declined_reason is stored in the alert's exact wording ("over the Games
  * limit"), so this must not prefix it with "more than the" — that produced
  * "more than the over the Games limit" in the first build.
  */

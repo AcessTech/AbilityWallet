@@ -10,9 +10,8 @@ import { color, font } from '../../../src/theme/tokens';
 import { MEMBER_PILL } from '../../../src/lib/pills';
 
 /**
- * Prototype screen `alex/card_number` — "Show number".
- * Showing the full number is a sensitive action, so it asks for Face ID first
- * (screens.md glob-05).
+ * "Show number".
+ * Showing the full number is a sensitive action, so it asks for Face ID first.
  */
 export default function ShowNumber() {
   const router = useRouter();

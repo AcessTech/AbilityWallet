@@ -1,5 +1,5 @@
 -- Emergency money. The Member never needs permission to reach it; the alert to
--- his Navigator is the whole oversight mechanism (Appendix B A10, always on).
+-- his Navigator is the whole oversight mechanism (alert A10, always on).
 
 create or replace function use_emergency_money(p_member uuid, p_amount numeric)
 returns jsonb

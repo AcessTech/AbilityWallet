@@ -6,7 +6,7 @@ import { color, font } from '../theme/tokens';
 import { Icon, IconName } from './Icon';
 
 /**
- * The prototype's navbar: icon, 11px label, and a gold dot under the active
+ * The tab bar: icon, 11px label, and a gold dot under the active
  * tab. Member tabs: Home · Card · Spend · Save · Account.
  * Navigator tabs: Home · Activity · Plan · Account.
  */

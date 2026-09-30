@@ -5,7 +5,7 @@ import { supabase } from '../../src/lib/supabase';
 import { useSession } from '../../src/lib/session';
 import { navigatorPill } from '../../src/lib/pills';
 
-/** Prototype screens `maria/n_lost` and `n_lost_done`. */
+/** Report their card lost or stolen, and the confirmation. */
 export default function ReportTheirCardLost() {
   const router = useRouter();
   const { activeMemberId, otherFirstName } = useSession();

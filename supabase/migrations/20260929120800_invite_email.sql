@@ -1,8 +1,8 @@
 -- Ability Wallet — queue the invite email.
 --
--- No mail service is connected to this project yet. Appendix B ground rule 7
--- already covers the Text channel this way: log it, don't send it. The same
--- applies to email until Eric connects a provider — `outbound_messages` is the
+-- No mail service is connected to this project yet. The Text channel is
+-- already handled this way: log it, don't send it. The same applies to email
+-- until a provider is connected — `outbound_messages` is the
 -- record, and the Navigator can also read the link off her own screen.
 
 drop function if exists create_member_invite(text, text, text, date, jsonb, jsonb, int);

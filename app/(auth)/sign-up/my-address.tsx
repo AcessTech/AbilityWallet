@@ -6,9 +6,8 @@ import { AddressFields, addressComplete } from '../../../src/components/AddressF
 import { useSignup } from '../../../src/lib/signup';
 
 /**
- * ob-21 Your home address — the self-signup path.
- * NOT IN THE PROTOTYPE (screens.md marks it SPEC). Built as the same address
- * block as frame 8. Needs Eric's review.
+ * Your home address — the self-signup path. Uses the same address block as
+ * the Navigator's sign-up flow.
  */
 export default function MyAddress() {
   const router = useRouter();

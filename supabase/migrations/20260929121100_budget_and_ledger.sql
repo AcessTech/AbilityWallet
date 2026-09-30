@@ -1,7 +1,7 @@
 -- Ability Wallet — budget spend, derived from the ledger.
 --
--- Appendix A §0.5: "Budget spend is derived from the ledger, never stored, so
--- it cannot drift." Both roles read the same numbers from these functions.
+-- Budget spend is derived from the ledger, never stored, so it cannot drift.
+-- Both roles read the same numbers from these functions.
 
 -- The start of the period a budget line is measured over.
 create or replace function period_start(p_period budget_period, p_at timestamptz default now())
@@ -38,7 +38,7 @@ returns numeric language sql stable as $$
 $$;
 
 -- Every live budget line for a member, with what is left. The Member's side
--- renders rings only: no mode tags ever (Appendix A §0.5).
+-- renders rings only: no mode tags ever.
 create or replace function budget_status(p_member uuid)
 returns table (
   id uuid,
@@ -69,7 +69,7 @@ returns table (
 $$;
 
 -- --------------------------------------------------------- SSI numbers ----
--- Appendix A §2.3 a2. ssi_room (live) and the month-end projection are
+-- ssi_room (live) and the month-end projection are
 -- separate numbers and are never conflated.
 
 create or replace function ssi_room(p_member uuid)

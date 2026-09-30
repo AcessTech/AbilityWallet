@@ -5,7 +5,7 @@ import { Btn, Option } from '../../../src/components/ui';
 import { LEVELS, useSignup } from '../../../src/lib/signup';
 
 /**
- * ob-10 How much support to start with. Onboarding walkthrough frame 10.
+ * How much support to start with.
  * She proposes; he sees the choice and consents at acceptance. Level names
  * live here and on her Plan tab only — never on his side of the app.
  */

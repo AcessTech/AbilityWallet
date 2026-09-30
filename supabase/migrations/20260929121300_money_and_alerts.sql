@@ -2,7 +2,7 @@
 
 -- ------------------------------------------------------------ alerting ----
 -- Alerts are generated server-side; the app renders them. Every alert lands in
--- the Activity feed regardless of routing (Appendix B ground rules 4 and 8).
+-- the Activity feed regardless of routing.
 
 create or replace function raise_alert(
   p_member uuid,
@@ -39,7 +39,7 @@ end;
 $$;
 
 -- Member-side notification. Lock-screen copy never carries amounts, merchant
--- names or declines (Appendix B ground rule 5).
+-- names or declines.
 create or replace function notify_member(
   p_member uuid,
   p_code   text,
@@ -100,7 +100,7 @@ end;
 $$;
 
 -- ------------------------------------------------- the authorization path --
--- ONE path, in this order: blocks -> stop lines -> balance (brief §5 item 6).
+-- ONE path, in this order: blocks -> stop lines -> balance.
 -- The order matters: the decline reason must name the rule that actually bit,
 -- because both roles build their copy from that string.
 
@@ -238,7 +238,7 @@ begin
 end;
 $$;
 
--- What happens after a decline (Appendix B A6 and B2).
+-- What happens after a decline (alerts A6 and B2).
 create or replace function on_decline(p_member uuid, p_txn uuid, p_auth jsonb)
 returns void
 language plpgsql security definer set search_path = public as $$
@@ -258,7 +258,7 @@ begin
   perform notify_member(p_member, 'B2', 'Open Ability Wallet',
     'A purchase didn''t go through.', jsonb_build_object('transaction_id', p_txn));
 
-  -- The no-buttons notice. declined_reason is already in Appendix B's exact
+  -- The no-buttons notice. declined_reason is already in the alert's exact
   -- wording, so the template must NOT prefix it with "more than the".
   insert into home_cards (member_id, cls, kind, headline, body, txn_id, state, payload)
   values (
@@ -342,7 +342,7 @@ begin
 end;
 $$;
 
--- Appendix A §2.3b. Starts only when ABLE money for rent lands in checking.
+-- Housing timer. Starts only when ABLE money for rent lands in checking.
 create or replace function start_housing_timer(p_member uuid, p_amount numeric, p_payee text)
 returns void
 language plpgsql security definer set search_path = public as $$

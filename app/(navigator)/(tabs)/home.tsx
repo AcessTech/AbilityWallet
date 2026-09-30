@@ -12,9 +12,9 @@ import { money } from '../../../src/lib/format';
 import { color, font, radius } from '../../../src/theme/tokens';
 
 /**
- * Navigator Home. Prototype screen `maria/nhome`: the most recent alert ->
+ * Navigator Home: the most recent alert ->
  * Accounts -> Budget -> Send money -> Recent. Newest alert first, like missed
- * calls (decided Sep 23); the rest live in Activity.
+ * calls; the rest live in Activity.
  */
 export default function NavigatorHome() {
   const router = useRouter();

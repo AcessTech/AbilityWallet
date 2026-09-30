@@ -1,6 +1,6 @@
 -- The one-question-a-day cap is correct, but it means the test-account loader
 -- cannot show a QDE offer on the same day it creates everything else. Give the
--- generator a force flag, used only by the loader (Appendix A §4.4).
+-- generator a force flag, used only by the loader.
 
 drop function if exists generate_qde_offers(uuid);
 
@@ -48,7 +48,7 @@ begin
      limit 1
   loop
     -- Housing offers need the licensing fact. A wrong-premise question is
-    -- worse than a missed saving (Appendix A §3.5).
+    -- worse than a missed saving.
     if t.candidate_qde like 'Housing%' and not v_pays_housing then
       continue;
     end if;

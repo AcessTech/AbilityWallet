@@ -7,8 +7,7 @@ import { MEMBER_PILL } from '../../../src/lib/pills';
 
 /**
  * A notice, opened from the strip on Home. No buttons: a decline is a full
- * stop, not a menu, and "Ask to change this" lives in Account, not here
- * (Appendix A §2.6).
+ * stop, not a menu, and "Ask to change this" lives in Account, not here.
  */
 export default function MemberNotice() {
   const router = useRouter();

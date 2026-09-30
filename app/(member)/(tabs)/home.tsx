@@ -11,9 +11,8 @@ import { useMemberHome } from '../../../src/data/hooks';
 import { money } from '../../../src/lib/format';
 
 /**
- * Member Home. Prototype screen `alex/home`:
+ * Member Home:
  * question slot -> My accounts -> My budget -> Recent.
- * "Check a price" was cut (Appendix A §6.1).
  */
 export default function MemberHomeScreen() {
   const router = useRouter();

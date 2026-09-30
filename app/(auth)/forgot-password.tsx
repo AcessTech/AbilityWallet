@@ -5,8 +5,7 @@ import { Btn, Field, Plain } from '../../src/components/ui';
 import { supabase } from '../../src/lib/supabase';
 
 /**
- * glob-03 Forgot password — reset by email.
- * NOT IN THE PROTOTYPE (screens.md marks it SPEC). Needs Eric's review.
+ * Forgot password — reset by email.
  */
 export default function ForgotPassword() {
   const router = useRouter();

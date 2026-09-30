@@ -1,8 +1,8 @@
--- Ability Wallet — the decision-card engine's tables. Appendix A §3.
+-- Ability Wallet — the decision-card engine's tables.
 
 -- ----------------------------------------------------------- home_cards ----
 -- The single card slot at the top of the Member's Home. Shape matches the
--- HomeCard interface in Appendix A §3 exactly.
+-- app's HomeCard interface exactly.
 
 create table home_cards (
   id            uuid primary key default gen_random_uuid(),
@@ -37,7 +37,7 @@ create unique index home_cards_one_per_txn_idx
 
 -- ------------------------------------------------------- merchant_rules ----
 -- "Ask once, remember forever". Visible to both parties in Account ->
--- "What we agreed" (Appendix A §3).
+-- "What we agreed".
 
 create table merchant_rules (
   id            uuid primary key default gen_random_uuid(),
@@ -54,7 +54,7 @@ create table merchant_rules (
 );
 
 -- --------------------------------------------------------- member_facts ----
--- What licenses a question (Appendix A §3.5). Inferred from money movement,
+-- What licenses a question. Inferred from money movement,
 -- never from a questionnaire. Shown to nobody as a list.
 
 create table member_facts (
@@ -75,7 +75,7 @@ create table member_facts (
 );
 
 -- ----------------------------------------------------- income_schedules ----
--- SSI / SSDI / wage prediction inputs (Appendix A §2.7).
+-- SSI / SSDI / wage prediction inputs.
 
 create table income_schedules (
   id           uuid primary key default gen_random_uuid(),
@@ -128,7 +128,7 @@ create table savings_goals (
 create index savings_goals_member_idx on savings_goals(member_id);
 
 -- ------------------------------------------------------------ consents -----
--- TIGHTEN = ask first. LOOSEN = apply now and notify (brief §2 rule 3).
+-- TIGHTEN = ask first. LOOSEN = apply now and notify.
 
 create table consents (
   id           uuid primary key default gen_random_uuid(),
@@ -145,13 +145,13 @@ create table consents (
 create index consents_member_idx on consents(member_id, status);
 
 -- A Navigator cannot stack proposals: one open consent per subtype per
--- proposer (Appendix A §2.2, server-enforced).
+-- proposer (server-enforced).
 create unique index consents_one_open_per_subtype_idx
   on consents(member_id, proposed_by, kind) where status = 'pending';
 
 -- ------------------------------------------------------- activity log ------
 -- Every card creation, display, answer and expiry, and every Navigator action,
--- lands here. Immutable; the Member can read all of it (Appendix A §4.1).
+-- lands here. Immutable; the Member can read all of it.
 
 create table activity_log (
   id          uuid primary key default gen_random_uuid(),

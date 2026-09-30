@@ -7,14 +7,10 @@ import { supabase } from '../../src/lib/supabase';
 import { color, font } from '../../src/theme/tokens';
 
 /**
- * glob-01 Sign in — email and password (decided Sep 29).
+ * Sign in — email and password. Built in the same pattern as the onboarding
+ * screens.
  *
- * NOT IN THE PROTOTYPE. screens.md marks glob-01 as SPEC; the only drawn
- * sign-in shape is the old phone-and-texted-code one, which the Sep 29
- * decision replaced. Built here in the onboarding walkthrough's own pattern
- * so the app can be opened; needs Eric's review.
- *
- * ob-30 (wrong email or password) renders as the inline error line.
+ * A wrong email or password renders as the inline error line.
  */
 export default function SignIn() {
   const router = useRouter();

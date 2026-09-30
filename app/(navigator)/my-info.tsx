@@ -4,7 +4,7 @@ import { Card, Row, Screen, Section, SubHeader, Title } from '../../src/componen
 import { useSession } from '../../src/lib/session';
 import { navigatorPill } from '../../src/lib/pills';
 
-/** Prototype screen `maria/nmaria` — "My info": contact and sign-in. */
+/** "My info": contact and sign-in. */
 export default function NavigatorMyInfo() {
   const router = useRouter();
   const { profile, otherFirstName } = useSession();

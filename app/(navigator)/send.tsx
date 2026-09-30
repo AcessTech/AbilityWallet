@@ -12,10 +12,10 @@ import { color, font } from '../../src/theme/tokens';
 import { navigatorPill } from '../../src/lib/pills';
 
 /**
- * Prototype screen `maria/nsend` — Send money, plus `n_send_repeat`.
+ * Send money, once or on repeat.
  *
  * The money comes from her LINKED EXTERNAL BANK. Her funds never sit in the
- * system (brief §2 rule 10). The button states the amount.
+ * system. The button states the amount.
  */
 export default function SendMoney() {
   const router = useRouter();

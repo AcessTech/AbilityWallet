@@ -1,8 +1,8 @@
--- Ability Wallet — alerts, chat, money movement. Appendix B, brief §4.
+-- Ability Wallet — alerts, chat, money movement.
 
 -- --------------------------------------------------------------- alerts ----
--- Generated server-side. The app renders them; it never computes them
--- (Appendix B ground rule 8). Every alert lands in Activity regardless of
+-- Generated server-side. The app renders them; it never computes them.
+-- Every alert lands in Activity regardless of
 -- routing — routing configures interruption, not knowledge.
 
 create table alerts (
@@ -22,7 +22,7 @@ create table alerts (
 create index alerts_navigator_idx on alerts(navigator_id, created_at desc);
 create index alerts_member_idx    on alerts(member_id, created_at desc);
 
--- Which alert code belongs to which routing group (Appendix B routing table).
+-- Which alert code belongs to which routing group.
 create table alert_group_map (
   code text primary key,
   grp  alert_group not null,
@@ -32,7 +32,7 @@ create table alert_group_map (
   wording text not null
 );
 
--- Per-group channel routing, the PagerDuty model (Appendix A §6.7).
+-- Per-group channel routing, the PagerDuty model.
 create table alert_prefs (
   navigator_id uuid not null references profiles(id) on delete cascade,
   grp          alert_group not null,
@@ -48,7 +48,7 @@ create table quiet_hours (
 );
 
 -- Member push notifications. Lock-screen copy never carries amounts,
--- merchants or declines (Appendix B ground rule 5).
+-- merchants or declines.
 create table member_notifications (
   id          uuid primary key default gen_random_uuid(),
   member_id   uuid not null references profiles(id) on delete cascade,
@@ -72,7 +72,7 @@ create table push_tokens (
 );
 
 -- Text and email that would have gone out. No text-message service is
--- connected (brief §5 item 4), so those are logged, not sent.
+-- connected, so those are logged, not sent.
 create table outbound_messages (
   id         uuid primary key default gen_random_uuid(),
   profile_id uuid references profiles(id) on delete set null,
@@ -115,7 +115,7 @@ create index chat_messages_thread_idx on chat_messages(thread_id, created_at);
 
 -- ---------------------------------------------------------------- money ----
 -- The Navigator's money never sits in the system: sends are funded from her
--- linked external bank (brief §2 rule 10).
+-- linked external bank.
 
 create table linked_banks (
   id           uuid primary key default gen_random_uuid(),
@@ -137,7 +137,7 @@ create table transfers (
   memo             text,
   initiated_by     uuid references profiles(id) on delete set null,
   status           transfer_status not null default 'completed',
-  -- A repeating monthly send (decided Sep 23).
+  -- A repeating monthly send.
   repeats_monthly  boolean not null default false,
   next_run_on      date,
   created_at       timestamptz not null default now(),
@@ -162,8 +162,7 @@ create table disputes (
 
 create index disputes_member_idx on disputes(member_id, created_at desc);
 
--- Safety escalations go to Ability Wallet support and NEVER to the Navigator
--- (decided Sep 23).
+-- Safety escalations go to Ability Wallet support and NEVER to the Navigator.
 create table safety_escalations (
   id         uuid primary key default gen_random_uuid(),
   member_id  uuid not null references profiles(id) on delete cascade,
@@ -173,7 +172,7 @@ create table safety_escalations (
 );
 
 -- ---------------------------------------------------- level 5 paperwork ----
--- Fiduciary requires SSA documents (prototype n_l5_* screens).
+-- Fiduciary requires SSA documents.
 
 create table fiduciary_documents (
   id           uuid primary key default gen_random_uuid(),
@@ -187,7 +186,7 @@ create table fiduciary_documents (
   created_at   timestamptz not null default now()
 );
 
--- Subscription and billing live in the Navigator's Account (decided Sep 23).
+-- Subscription and billing live in the Navigator's Account.
 create table subscriptions (
   id           uuid primary key default gen_random_uuid(),
   navigator_id uuid not null references profiles(id) on delete cascade,

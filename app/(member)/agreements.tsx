@@ -9,7 +9,7 @@ import { MEMBER_PILL } from '../../src/lib/pills';
 
 /**
  * "What we agreed" — every merchant rule and every block, visible to both
- * parties (Appendix A §3). Member-facing words only; no mode tags, so a stop
+ * parties. Member-facing words only; no mode tags, so a stop
  * line reads the same as a guide.
  */
 export default function Agreements() {

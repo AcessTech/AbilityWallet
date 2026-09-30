@@ -8,8 +8,8 @@ import { money } from '../../src/lib/format';
 import { MEMBER_PILL } from '../../src/lib/pills';
 
 /**
- * Prototype screen `alex/everything_else` — the collapsed row on Spend opens
- * the full category breakdown. Member-facing words only.
+ * "Everything else" — the collapsed row on Spend opens the full category
+ * breakdown. Member-facing words only.
  */
 export default function EverythingElse() {
   const router = useRouter();

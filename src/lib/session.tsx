@@ -27,7 +27,7 @@ export interface Profile {
 export interface Link {
   link_id: string;
   /** 1 Independent · 2 Monitored · 3 Flexible · 4 Firm · 5 Fiduciary.
-   *  NEVER shown to the Member (brief §2 rule 1). */
+   *  NEVER shown to the Member. */
   level: number;
   status: 'invited' | 'active' | 'ended' | 'locked' | 'expired';
   invite_email?: string | null;

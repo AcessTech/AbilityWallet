@@ -3,7 +3,7 @@ import { useRouter } from 'expo-router';
 import { Btn, Card, Muted, Plain, Screen, SubHeader, Title } from '../../../src/components/ui';
 import { MEMBER_PILL } from '../../../src/lib/pills';
 
-/** Prototype screen `alex/card_wallet` — Tap to pay. */
+/** Tap to pay. */
 export default function TapToPay() {
   const router = useRouter();
   return (

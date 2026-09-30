@@ -11,7 +11,7 @@ export interface Address {
 }
 
 /**
- * The address block from onboarding frame 8: street, apt, city + state on one
+ * The onboarding address block: street, apt, city + state on one
  * row, then ZIP. All on one screen so autofill can do its job.
  */
 export function AddressFields({

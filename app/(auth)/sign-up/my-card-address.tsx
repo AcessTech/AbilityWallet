@@ -8,9 +8,8 @@ import { supabase } from '../../../src/lib/supabase';
 import { addressLine, parseMaskedDate } from '../../../src/lib/format';
 
 /**
- * ob-22 Where to send your card — the self-signup path. "My home" is the
- * default. NOT IN THE PROTOTYPE (screens.md marks it SPEC); built as the same
- * two-option shape as frame 9. Needs Eric's review.
+ * Where to send your card — the self-signup path. "My home" is the
+ * default. Same two-option shape as the Navigator's card-address screen.
  */
 export default function MyCardAddress() {
   const router = useRouter();

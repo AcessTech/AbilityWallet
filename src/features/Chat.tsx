@@ -24,7 +24,7 @@ export interface ChatMessage {
 
 /**
  * The Help thread. One conversation: the Navigator and the AI helper are both
- * in it with the Member (brief §2 rule 5).
+ * in it with the Member.
  *
  * At Independent the AI thread is private to the Member and the Navigator gets
  * a separate 1:1 — the RLS policy on chat_threads enforces that, so this
@@ -130,7 +130,7 @@ export function Chat({
   });
 
   // "Report a problem" opens this screen with the transaction attached and the
-  // AI asking the opening question. No category sheet (Appendix A §6.2).
+  // AI asking the opening question. No category sheet.
   useEffect(() => {
     if (!reportProblem || !attachedTxnId || !thread?.id || openedRef.current) return;
     openedRef.current = true;

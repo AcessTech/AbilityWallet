@@ -1,4 +1,4 @@
--- Ability Wallet — the server-side jobs. Brief §5, Appendix A §2.3 and §2.7.
+-- Ability Wallet — the server-side jobs.
 -- All timing logic is server-side: the app renders whatever cards exist.
 
 -- --------------------------------------------------------- banking days ----
@@ -83,7 +83,7 @@ $$;
 select seed_federal_holidays(2025, 2035);
 
 -- ------------------------------------------------- recurring detection -----
--- Brief §5 item 3: flag streams after two cycles. QDE tier 2.
+-- Flag streams after two cycles. QDE tier 2.
 
 create or replace function detect_recurring(p_member uuid)
 returns void
@@ -136,7 +136,7 @@ begin
     on conflict (member_id, key) do update set value = 'true', fact_confidence = 'HIGH';
   end if;
 
-  -- Rent-shaped debits license the Housing questions (Appendix A §3.5):
+  -- Rent-shaped debits license the Housing questions:
   -- same payee, similar amount, monthly, in the first days, a big debit.
   for r in
     select t.merchant, t.merchant_key, count(*) as cycles
@@ -161,7 +161,7 @@ end;
 $$;
 
 -- ------------------------------------------------- income prediction -------
--- Appendix A §2.7. "Coming in" lists only HIGH/MEDIUM predictions in the next
+-- "Coming in" lists only HIGH/MEDIUM predictions in the next
 -- 35 days, as dated predictions.
 
 create or replace function predict_income(p_member uuid)
@@ -229,7 +229,7 @@ end;
 $$;
 
 -- --------------------------------------------------------- SSI sentinel ----
--- Appendix A §2.3a. Nothing before day 25. Day 25, then two days before the
+-- Nothing before day 25. Day 25, then two days before the
 -- last day, then the morning of the last day. Three touches maximum.
 
 create or replace function run_ssi_sweep(p_member uuid)
@@ -301,7 +301,7 @@ begin
 end;
 $$;
 
--- Appendix A §2.3 a3. On the last day of the month, anything above the safe
+-- On the last day of the month, anything above the safe
 -- line moves to ABLE, if the rule is on.
 create or replace function run_auto_move()
 returns void
@@ -336,7 +336,7 @@ begin
 end;
 $$;
 
--- Appendix A §2.3b. Daily; the card raises at five days left, the alert at two.
+-- Housing timer. Daily; the card raises at five days left, the alert at two.
 create or replace function run_housing_timer(p_member uuid)
 returns void
 language plpgsql security definer set search_path = public as $$
@@ -366,7 +366,7 @@ end;
 $$;
 
 -- ------------------------------------------------ transaction questions ----
--- Appendix A §2.4 and §2.5, under the one-question-a-day cap.
+-- QDE offers and income tags, under the one-question-a-day cap.
 
 create or replace function generate_qde_offers(p_member uuid)
 returns void
@@ -412,7 +412,7 @@ begin
      limit 1
   loop
     -- Housing offers need the licensing fact. A wrong-premise question is
-    -- worse than a missed saving (Appendix A §3.5).
+    -- worse than a missed saving.
     if t.candidate_qde like 'Housing%' and not v_pays_housing then
       continue;
     end if;

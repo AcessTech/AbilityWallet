@@ -6,9 +6,8 @@ import { useSession } from '../../../src/lib/session';
 import { MEMBER_PILL } from '../../../src/lib/pills';
 
 /**
- * Prototype screen `alex/talks` — "How the app talks to me".
- * This swaps body copy only. Decided Sep 23: it does not change how the AI
- * helper writes.
+ * "How the app talks to me".
+ * This swaps body copy only: it does not change how the AI helper writes.
  */
 export default function HowTheAppTalks() {
   const router = useRouter();

@@ -6,7 +6,7 @@ import { supabase } from '../../../src/lib/supabase';
 import { useSession } from '../../../src/lib/session';
 import { navigatorPill } from '../../../src/lib/pills';
 
-/** Prototype screen `maria/n_password`. */
+/** Change password. */
 export default function ChangePassword() {
   const router = useRouter();
   const { otherFirstName } = useSession();

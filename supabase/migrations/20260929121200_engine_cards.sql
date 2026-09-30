@@ -1,10 +1,10 @@
--- Ability Wallet — the decision-card engine. Appendix A.
+-- Ability Wallet — the decision-card engine.
 --
 -- The engine lives in Postgres, not the app: two phones must never disagree
 -- about what is due. Every function here is idempotent.
 
 -- ------------------------------------------------------- the queue --------
--- Appendix A §1, highest priority first:
+-- Highest priority first:
 --   1 ABLE_ANSWER · 2 CONSENT · 3 SENTINEL · 4 QDE_OFFER · 5 INCOME_TAG
 -- NOTICEs never occupy the slot; they render as a strip above it.
 
@@ -129,7 +129,7 @@ $$;
 
 -- ------------------------------------------- per-class answer handlers -----
 
--- Appendix A §2.4. Yes reimburses from ABLE and saves a merchant rule;
+-- QDE offer. Yes reimburses from ABLE and saves a merchant rule;
 -- No saves a rule that never asks about this shop again.
 create or replace function answer_qde_offer(v home_cards, p_yes boolean, p_payload jsonb)
 returns jsonb
@@ -190,7 +190,7 @@ begin
 end;
 $$;
 
--- Appendix A §2.1. Mandatory categorisation of an ABLE-side transaction.
+-- Mandatory categorisation of an ABLE-side transaction.
 create or replace function answer_able_category(v home_cards, p_yes boolean, p_payload jsonb)
 returns jsonb
 language plpgsql security definer set search_path = public as $$
@@ -236,7 +236,7 @@ begin
 end;
 $$;
 
--- Appendix A §2.2. The Navigator proposed something; this is his answer.
+-- The Navigator proposed something; this is his answer.
 create or replace function answer_consent(v home_cards, p_yes boolean)
 returns jsonb
 language plpgsql security definer set search_path = public as $$
@@ -262,7 +262,7 @@ begin
 end;
 $$;
 
--- Appendix A §2.3. Benefits protection: the SSI sweep and the housing timer.
+-- Benefits protection: the SSI sweep and the housing timer.
 create or replace function answer_sentinel(v home_cards, p_yes boolean)
 returns jsonb
 language plpgsql security definer set search_path = public as $$
@@ -296,7 +296,7 @@ begin
     v_from := account_of(v.member_id, 'checking');
     if (select balance from accounts where id = v_from) < v_amount then
       -- He has spent the money in the meantime. Say so rather than marking the
-      -- deadline met (Appendix A §2.3b).
+      -- deadline met.
       return jsonb_build_object('sent', false, 'reason', 'not_enough');
     end if;
     perform post_transaction(
@@ -310,7 +310,7 @@ begin
 end;
 $$;
 
--- Appendix A §2.5. Benefit versus wages.
+-- Benefit versus wages.
 create or replace function answer_income_tag(v home_cards, p_yes boolean, p_payload jsonb)
 returns jsonb
 language plpgsql security definer set search_path = public as $$

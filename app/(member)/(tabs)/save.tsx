@@ -23,7 +23,7 @@ interface Save {
 }
 
 /**
- * Member Save tab. Prototype screen `alex/save`: Coming in -> Tasks (the
+ * Member Save tab: Coming in -> Tasks (the
  * sentinel card, if one is due) -> ABLE savings -> My goals.
  */
 export default function MemberSave() {

@@ -6,8 +6,7 @@ import { Btn, Muted } from '../../../src/components/ui';
 import { color, font, radius } from '../../../src/theme/tokens';
 
 /**
- * ob-11a Invite sent — pending state.
- * NOT IN THE PROTOTYPE (screens.md marks it SPEC). Needs Eric's review.
+ * Invite sent — pending state.
  *
  * The link is shown because no mail service is connected to the Supabase
  * project yet, so the email is recorded but not delivered. Once a provider is

@@ -6,7 +6,7 @@ import { supabase } from '../../../src/lib/supabase';
 import { useSession } from '../../../src/lib/session';
 import { money } from '../../../src/lib/format';
 
-/** Prototype screen `alex/emergency_done`. */
+/** Success screen after using emergency money. */
 export default function EmergencyMoved() {
   const router = useRouter();
   const { amount } = useLocalSearchParams<{ amount: string }>();

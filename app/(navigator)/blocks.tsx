@@ -10,9 +10,9 @@ import { merchantKey } from '../../src/lib/format';
 import { navigatorPill } from '../../src/lib/pills';
 
 /**
- * Prototype screens `maria/nblocks`, `n_known_scams` and `n_search`.
+ * Blocks, known scams and merchant search.
  *
- * Two layers (Appendix A §6.5): category toggles backed by merchant codes, and
+ * Two layers: category toggles backed by merchant codes, and
  * specific merchants. Adding a block follows the tighten rule, so it becomes a
  * question on his Home. "Known scams" is always on and is not configurable.
  */

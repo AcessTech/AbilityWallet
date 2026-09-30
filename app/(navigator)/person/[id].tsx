@@ -11,9 +11,8 @@ import { addressLine, longDate, money } from '../../../src/lib/format';
 import { navigatorPill } from '../../../src/lib/pills';
 
 /**
- * Prototype screen `maria/nalex` — the person she supports: their info, their
- * card, their benefits, and the offboarding link at the bottom
- * (Appendix A §6.9).
+ * The person she supports: their info, their card, their benefits, and the
+ * offboarding link at the bottom.
  */
 export default function PersonDetail() {
   const router = useRouter();

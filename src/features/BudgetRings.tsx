@@ -8,9 +8,9 @@ import type { MemberHome } from '../data/hooks';
 type Line = MemberHome['budget'][number];
 
 /**
- * Budget rings. Both roles use rings (decided Sep 23). Gauges show money LEFT
- * and drain green -> orange -> red. The Member's side shows rings only: no
- * mode tags ever (Appendix A §0.5).
+ * Budget rings. Both roles use rings. Gauges show money LEFT and drain
+ * green -> orange -> red. The Member's side shows rings only: no mode tags
+ * ever.
  */
 export function BudgetRings({
   lines,

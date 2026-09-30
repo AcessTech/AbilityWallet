@@ -3,7 +3,7 @@ import { useRouter } from 'expo-router';
 import { Success } from '../../src/features/Success';
 import { useSession } from '../../src/lib/session';
 
-/** Prototype screen `alex/ask_sent` — "Ask sent". */
+/** "Ask sent" confirmation. */
 export default function AskSent() {
   const router = useRouter();
   const { otherFirstName } = useSession();

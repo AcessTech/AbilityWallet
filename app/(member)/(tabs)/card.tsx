@@ -8,7 +8,7 @@ import { useSession } from '../../../src/lib/session';
 import { color, font, radius } from '../../../src/theme/tokens';
 
 /**
- * Member Card tab. Prototype screen `alex/card`: page title "My card", card
+ * Member Card tab: page title "My card", card
  * art with "Show number", then Tap to pay and Report lost or stolen.
  */
 export default function MemberCard() {

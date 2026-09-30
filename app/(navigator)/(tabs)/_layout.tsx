@@ -2,7 +2,7 @@ import React from 'react';
 import { Tabs } from 'expo-router';
 import { TabBar } from '../../../src/components/TabBar';
 
-/** Navigator IA: Home · Activity · Plan · Account (brief §6). */
+/** Navigator IA: Home · Activity · Plan · Account. */
 export default function NavigatorTabs() {
   return (
     <Tabs tabBar={(p) => <TabBar {...p} />} screenOptions={{ headerShown: false }}>

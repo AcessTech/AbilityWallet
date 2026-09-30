@@ -4,10 +4,10 @@ import { Loading } from '../../src/components/ui';
 import { useSession } from '../../src/lib/session';
 
 /**
- * Navigator side of the conversation. Prototype screen `maria/n_chat`.
+ * Navigator side of the conversation.
  *
  * At Independent she gets a separate 1:1 thread and never sees the AI thread;
- * from Monitored up the Help thread is shared (brief §2 rule 5). The RLS
+ * from Monitored up the Help thread is shared. The RLS
  * policy on chat_threads enforces which one she can read.
  */
 export default function NavigatorChat() {

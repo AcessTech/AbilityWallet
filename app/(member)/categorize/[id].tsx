@@ -7,11 +7,11 @@ import { useAnswerCard } from '../../../src/data/hooks';
 import { MEMBER_PILL } from '../../../src/lib/pills';
 
 /**
- * The category picker behind an ABLE question's "No" (Appendix A §2.1).
+ * The category picker behind an ABLE question's "No".
  *
  * Member-facing words only, and only the categories that can be a qualified
  * disability expense — ten from the spine plus Funeral & burial. The QDE name
- * itself is never shown to him (prd.md §5.6).
+ * itself is never shown to him.
  */
 export default function Categorize() {
   const router = useRouter();

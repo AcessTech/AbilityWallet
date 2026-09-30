@@ -4,7 +4,7 @@ import { Btn, Card, Plain, Screen, SubHeader, Title } from '../../src/components
 import { useSession } from '../../src/lib/session';
 import { navigatorPill } from '../../src/lib/pills';
 
-/** Prototype screens `glob-06` / `maria/n_signout` — sign-out confirmation. */
+/** Sign-out confirmation. */
 export default function SignOut() {
   const router = useRouter();
   const { signOut, otherFirstName } = useSession();

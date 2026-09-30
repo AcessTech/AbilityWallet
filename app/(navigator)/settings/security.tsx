@@ -4,7 +4,7 @@ import { Card, Muted, Row, Screen, SubHeader, Title } from '../../../src/compone
 import { useSession } from '../../../src/lib/session';
 import { navigatorPill } from '../../../src/lib/pills';
 
-/** Prototype screens `maria/n_security` and `n_password`. */
+/** Security settings. */
 export default function Security() {
   const router = useRouter();
   const { profile, otherFirstName } = useSession();

@@ -21,7 +21,7 @@ interface Analytics {
 }
 
 /**
- * Prototype screen `maria/nanalytics` and the `n_anly_*` detail screens:
+ * Analytics and its detail screens:
  * cash flow, a spending donut, and the balance line against the $2,000 limit.
  */
 export default function Analytics() {

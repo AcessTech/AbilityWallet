@@ -5,9 +5,8 @@ import { Btn, Field } from '../../../src/components/ui';
 import { useSignup } from '../../../src/lib/signup';
 
 /**
- * ob-06 Their name and email. Onboarding walkthrough frame 6, with the phone
- * number replaced by an email address (decided Sep 29 — the invite goes by
- * email). Nothing is sent from this screen.
+ * Their name and email (the invite goes by email). Nothing is sent from this
+ * screen.
  */
 export default function TheirDetails() {
   const router = useRouter();

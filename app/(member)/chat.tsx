@@ -5,7 +5,7 @@ import { Loading } from '../../src/components/ui';
 import { useSession } from '../../src/lib/session';
 
 /**
- * Member Help chat. Prototype screens `alex/chat` and `alex/chat_report`.
+ * Member Help chat, including reporting a problem with a transaction.
  * One thread: the Navigator and the AI helper are both in it — except at
  * Independent, where the AI thread is private to the Member.
  */

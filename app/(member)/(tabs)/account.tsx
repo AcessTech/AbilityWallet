@@ -7,7 +7,7 @@ import { useSession } from '../../../src/lib/session';
 import { IS_TEST_BUILD } from '../../../src/lib/testBuild';
 
 /**
- * Member Account tab. Prototype screen `alex/account`:
+ * Member Account tab:
  * Support (the Navigator, the AI Navigator, Add a Navigator) -> Forms ->
  * Settings. No support-level names or numbers anywhere on his side.
  */

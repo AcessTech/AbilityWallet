@@ -10,7 +10,7 @@ type Line = MemberHome['budget'][number];
  * The Navigator's budget row: name, amount per period, a fill bar, and what
  * has been spent. Stop and alert lines get a plain sub-line under the amount —
  * no badges at all, and the words "Firm limit", "Card stops here" and
- * "Decline" never appear (Appendix A §0.5).
+ * "Decline" never appear.
  */
 export function modeSubLine(line: Line): string | null {
   if (line.mode === 'stop') {

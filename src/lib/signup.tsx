@@ -2,8 +2,7 @@ import React, { createContext, useContext, useMemo, useState } from 'react';
 
 /**
  * What the sign-up flow collects before anything is written to the database.
- * Matches docs/onboarding_walkthrough_aug7.html, with phone replaced by email
- * throughout (decided Sep 29).
+ * Follows the onboarding design, with phone replaced by email throughout.
  */
 export interface SignupDraft {
   email: string;
@@ -72,7 +71,7 @@ export function useSignup(): Ctx {
   return ctx;
 }
 
-/** The five support levels, worded exactly as onboarding frame 10 has them. */
+/** The five support levels, worded exactly as in the onboarding design. */
 export const LEVELS = [
   { level: 1, name: 'Independent',     desc: '{name} banks on their own. You see nothing.' },
   { level: 2, name: 'Monitored',       desc: 'You see balance and spending, and get alerts.' },

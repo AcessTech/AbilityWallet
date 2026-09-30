@@ -5,8 +5,8 @@ import { useSession } from '../../../src/lib/session';
 import { navigatorPill } from '../../../src/lib/pills';
 
 /**
- * Prototype screen `maria/n_open_account` — the partner-bank cross-sell.
- * Optional, never required (Appendix A §6.6).
+ * The partner-bank cross-sell.
+ * Optional, never required.
  */
 export default function OpenAccount() {
   const router = useRouter();

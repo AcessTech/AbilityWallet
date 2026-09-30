@@ -2,7 +2,7 @@ import React from 'react';
 import { useLocalSearchParams, useRouter } from 'expo-router';
 import { Success } from '../../../src/features/Success';
 
-/** Prototype screens `alex/consent_done` and `alex/level_done`. */
+/** Success screen after answering a consent or a support-level change. */
 export default function ConsentDone() {
   const router = useRouter();
   const { kind } = useLocalSearchParams<{ kind: string }>();

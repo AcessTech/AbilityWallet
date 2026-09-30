@@ -10,8 +10,7 @@ import { DEMO_ACCOUNTS, DEMO_PASSWORD } from '../../src/lib/demo';
 import { color, font } from '../../src/theme/tokens';
 
 /**
- * ob-01 Welcome. Drawn in docs/onboarding_walkthrough_aug7.html, frame 1:
- * big mark + wordmark, "Get started", "Sign in", FDIC footnote.
+ * Welcome screen: big mark + wordmark, "Get started", "Sign in", FDIC footnote.
  */
 export default function Welcome() {
   const router = useRouter();

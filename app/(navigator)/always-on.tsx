@@ -5,8 +5,8 @@ import { useSession } from '../../src/lib/session';
 import { navigatorPill } from '../../src/lib/pills';
 
 /**
- * Prototype screen `maria/n_always_on` — "Card safety and fraud".
- * Push + Text, not configurable (Appendix A §6.7 item 1).
+ * "Card safety and fraud".
+ * Push + Text, not configurable.
  */
 export default function AlwaysOn() {
   const router = useRouter();

@@ -3,9 +3,8 @@ import Svg, { Circle, Line, Path, Polygon, Polyline, Rect } from 'react-native-s
 import { color } from '../theme/tokens';
 
 /**
- * The 28 icons the prototype uses — no more (Sep 23: "only the icons the 27
- * reviewed screens already used"). All 24x24, stroked, round caps and joins,
- * matching the prototype's inline SVG exactly.
+ * The 28 icons the design uses — no more. All 24x24, stroked, round caps and
+ * joins, matching the design's inline SVG exactly.
  */
 export type IconName =
   | 'chat' | 'back' | 'file' | 'info' | 'check' | 'ban' | 'home' | 'user'

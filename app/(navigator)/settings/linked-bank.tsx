@@ -7,7 +7,7 @@ import { useSession } from '../../../src/lib/session';
 import { navigatorPill } from '../../../src/lib/pills';
 
 /**
- * Prototype screen `maria/n_linked_bank`.
+ * Her linked bank.
  * Money she sends comes from here. Her funds never sit in the system.
  */
 export default function LinkedBank() {

@@ -1,4 +1,4 @@
--- The Member asking someone to be his Navigator (prototype `alex/add_nav`).
+-- The Member asking someone to be his Navigator.
 -- Mirror of the Navigator-side invite: nothing is visible until both agree.
 
 create or replace function invite_navigator(p_first_name text, p_email text)

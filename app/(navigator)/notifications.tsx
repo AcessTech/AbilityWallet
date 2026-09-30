@@ -9,7 +9,7 @@ import { useSession } from '../../src/lib/session';
 import { navigatorPill } from '../../src/lib/pills';
 
 /**
- * Prototype screen `maria/nnotif` — the PagerDuty model (Appendix A §6.7).
+ * Navigator notification routing — the PagerDuty model.
  *
  * Routing configures interruption, not knowledge: every alert still lands in
  * the Activity feed whatever these say. "Card safety and fraud" is Push + Text

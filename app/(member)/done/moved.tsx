@@ -6,7 +6,7 @@ import { supabase } from '../../../src/lib/supabase';
 import { useSession } from '../../../src/lib/session';
 import { money } from '../../../src/lib/format';
 
-/** Prototype screens `alex/move_done` and `alex/emergency_done`. */
+/** Success screen after moving money. */
 export default function MoneyMoved() {
   const router = useRouter();
   const { amount } = useLocalSearchParams<{ amount: string }>();

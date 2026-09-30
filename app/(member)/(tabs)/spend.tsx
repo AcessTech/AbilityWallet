@@ -20,7 +20,7 @@ interface Spend {
 }
 
 /**
- * Member Spend tab. Prototype screen `alex/spend`: budget rings ->
+ * Member Spend tab: budget rings ->
  * "Everything else" -> "ABLE spending" (expandable) -> Transactions.
  */
 export default function MemberSpend() {

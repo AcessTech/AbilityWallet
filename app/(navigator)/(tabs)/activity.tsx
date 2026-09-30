@@ -22,7 +22,7 @@ interface Activity {
 }
 
 /**
- * Navigator Activity tab. Prototype screen `maria/nactivity`: rings -> send
+ * Navigator Activity tab: rings -> send
  * money -> recurring -> transactions -> the Notifications row at the bottom.
  * Every alert lands here regardless of routing — routing configures
  * interruption, not knowledge.

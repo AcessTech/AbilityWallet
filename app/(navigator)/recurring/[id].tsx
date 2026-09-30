@@ -8,8 +8,7 @@ import { longDate, money } from '../../../src/lib/format';
 import { navigatorPill } from '../../../src/lib/pills';
 
 /**
- * Prototype screens `maria/n_rec_*` — one repeating stream, found by the
- * detector after two cycles (brief §5 item 3).
+ * One repeating stream, found by the detector after two cycles.
  */
 export default function RecurringDetail() {
   const router = useRouter();

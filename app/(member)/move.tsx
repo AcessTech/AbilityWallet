@@ -11,7 +11,7 @@ import { money } from '../../src/lib/format';
 import { color, font } from '../../src/theme/tokens';
 import { MEMBER_PILL } from '../../src/lib/pills';
 
-/** Prototype screen `alex/move_amount` — move money to ABLE savings. */
+/** Move money to ABLE savings. */
 export default function MoveMoney() {
   const router = useRouter();
   const qc = useQueryClient();

@@ -6,7 +6,7 @@ import { useSignup } from '../../../src/lib/signup';
 import { supabase } from '../../../src/lib/supabase';
 
 /**
- * ob-05 The fork. Onboarding walkthrough frame 5.
+ * The fork: signing up for yourself or for someone else.
  *
  * The answer decides the role, so this is where the account is actually
  * created: "Someone else" makes a Navigator, "Me" makes a Member.

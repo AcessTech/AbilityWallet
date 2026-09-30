@@ -12,11 +12,11 @@ import { navigatorPill } from '../../src/lib/pills';
 import { color } from '../../src/theme/tokens';
 
 /**
- * Prototype screen `maria/nlevel` — the support level list with a "Now"
+ * The support level list with a "Now"
  * marker and plain behaviour descriptions.
  *
  * Up needs his OK. Down takes effect straight away with a notice: a decrease
- * in oversight never needs approval (Appendix A §6.4).
+ * in oversight never needs approval.
  */
 const BEHAVIOUR = [
   'Banks alone. You can send messages; you see nothing else.',
