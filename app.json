@@ -1,0 +1,55 @@
+{
+  "expo": {
+    "name": "Ability Wallet",
+    "slug": "ability-wallet",
+    "scheme": "abilitywallet",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "newArchEnabled": true,
+    "splash": {
+      "image": "./assets/splash-icon.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#093870"
+    },
+    "ios": {
+      "supportsTablet": false,
+      "bundleIdentifier": "app.abilitywallet.demo",
+      "buildNumber": "1",
+      "infoPlist": {
+        "NSFaceIDUsageDescription": "Ability Wallet uses Face ID to unlock your account.",
+        "NSCameraUsageDescription": "Ability Wallet uses the camera to take a picture of a receipt.",
+        "NSPhotoLibraryUsageDescription": "Ability Wallet uses your photos to attach a receipt.",
+        "NSMicrophoneUsageDescription": "Ability Wallet uses the microphone so you can talk instead of type.",
+        "ITSAppUsesNonExemptEncryption": false
+      }
+    },
+    "android": {
+      "package": "com.abilitywallet.app",
+      "adaptiveIcon": {
+        "backgroundColor": "#093870",
+        "foregroundImage": "./assets/android-icon-foreground.png"
+      },
+      "predictiveBackGestureEnabled": false
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "plugins": [
+      "expo-router",
+      "expo-font",
+      "expo-secure-store",
+      "expo-splash-screen",
+      "expo-local-authentication",
+      "expo-notifications",
+      "expo-image-picker"
+    ],
+    "experiments": {
+      "typedRoutes": true
+    },
+    "extra": {
+      "testBuild": true
+    }
+  }
+}
