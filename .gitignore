@@ -40,5 +40,3 @@ yarn-error.*
 .env*.local
 .secrets.env
 
-# the project documents are Eric's, kept in sync from his claude.ai project
-# and never edited here (build_brief.md §0 item 3)
