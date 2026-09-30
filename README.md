@@ -40,6 +40,20 @@ Navigator can't tighten a limit or block a shop until the Member agrees.
 - **Business logic:** Postgres functions and scheduled jobs, in
   `supabase/migrations`
 
+## Technical highlights
+
+- **Rules live in the database.** Card approvals, consent, alerts and
+  scheduled jobs are Postgres functions, so every client follows the same
+  rules and the app can't get around them.
+- **Security in every table.** Each table has row-level security policies. For
+  example, a Navigator only sees what the Member's support level allows. The
+  smoke test confirms that a stranger's account can't read anyone else's data.
+- **Two-sided consent.** A change that gives the Member less freedom creates a
+  request that the Member has to approve. A change that gives more freedom
+  applies right away.
+- **Budgets are calculated from transactions.** Spending is never stored as a
+  separate total, so the rings and limits always match the transaction history.
+
 ## Project layout
 
 ```
